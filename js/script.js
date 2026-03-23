@@ -32,9 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
-    if (mobileBtn) {
+    if (mobileBtn && navbar) {
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            navbar.classList.toggle('menu-open');
         });
     }
 
