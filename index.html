@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <!-- Abstract Background Elements -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
     <header class="navbar">
         <div class="container nav-content">
             <a href="#" class="logo">
@@ -55,24 +60,20 @@
             </div>
         </section>
 
-        <!-- Trust Banner -->
-        <!-- <div class="trust-banner fade-in">
-            <div class="container">
-                <p class="trust-text">TRUSTED BY INNOVATIVE ENTERPRISES WORLDWIDE</p>
-                <div class="trust-logos">
-                    <span class="logo-item" style="font-family: sans-serif; letter-spacing: -1px;">ApexCorp</span>
-                    <span class="logo-item" style="font-style: italic;">Nexus Financial</span>
-                    <span class="logo-item" style="text-transform: uppercase;">Vanguard</span>
-                    <span class="logo-item">QuantSolutions</span>
-                    <span class="logo-item" style="font-weight: 300;">Elevate Health</span>
-                </div>
-            </div>
-        </div> -->
+
+        <div class="wave-divider" style="margin-top: -2px;">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
 
         <section id="about" class="about section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>Why Choose Us?</h2>
+                    <h2>Why Choose Us? </h2>
                     <p>We deliver high-quality technology that just works, day in and day out.</p>
                 </div>
                 <div class="about-grid">
@@ -98,10 +99,36 @@
             </div>
         </section>
 
+        <section id="process" class="process section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Our Simple Process </h2>
+                    <p>How we take your project from initial idea to a successful launch.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card card fade-in">
+                        <div class="process-number">01</div>
+                        <h3>Discovery</h3>
+                        <p>We analyze your business needs and technical requirements in detail.</p>
+                    </div>
+                    <div class="process-card card fade-in" style="transition-delay: 0.2s">
+                        <div class="process-number">02</div>
+                        <h3>Strategy</h3>
+                        <p>Our engineers design a scalable architecture tailored to your goals.</p>
+                    </div>
+                    <div class="process-card card fade-in" style="transition-delay: 0.4s">
+                        <div class="process-number">03</div>
+                        <h3>Launch</h3>
+                        <p>Rigorous testing followed by a seamless deployment to production.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="services" class="services section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>What We Do</h2>
+                    <h2>What We Do </h2>
                     <p>Complete technology solutions designed to solve your specific business challenges.</p>
                 </div>
                 <div class="services-grid">
@@ -127,12 +154,35 @@
             </div>
         </section>
 
+        <!-- <section class="stats section fade-in">
+            <div class="container">
+                <div class="stats-grid card">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <p class="stat-label">Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <p class="stat-label">System Uptime</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <p class="stat-label">Critical Support</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10x</div>
+                        <p class="stat-label">Client Growth</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
 
 
         <section id="projects" class="projects section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>Featured Work</h2>
+                    <h2>Featured Work </h2>
                     <p>Explore some of the robust enterprise systems we've delivered.</p>
                 </div>
 
@@ -144,9 +194,10 @@
                                 <img src="images/project1.png" alt="Enterprise Financial Dashboard">
                             </div>
                             <div class="project-info">
-                                <h3>Financial Data Platform</h3>
-                                <p>An easy-to-use dashboard that helps financial managers track their company's money in
-                                    real-time.</p>
+                                <h3>Forex Exchange Office System (Legal)</h3>
+                                <p>A management platform for forex offices with real-time rates, multi-currency
+                                    transactions, cashier controls, and automated reconciliation. Dashboards and reports
+                                    simplify liquidity tracking and compliance.</p>
                             </div>
                         </div>
 
@@ -156,9 +207,10 @@
                                 <img src="images/project2.png" alt="Data Pipeline Infrastructure">
                             </div>
                             <div class="project-info">
-                                <h3>Secure Data Network</h3>
-                                <p>A reliable system that safely processes millions of customer records in the
-                                    background every day.</p>
+                                <h3>Shop Inventory Management System</h3>
+                                <p>An inventory solution that tracks stock, purchase orders, and sales across locations
+                                    with barcode support, low-stock alerts, and basic forecasting to reduce overstock
+                                    and stockouts.</p>
                             </div>
                         </div>
 
@@ -168,29 +220,20 @@
                                 <img src="images/project3.png" alt="Logistics Mobile MVP">
                             </div>
                             <div class="project-info">
-                                <h3>Logistics Tracking System</h3>
-                                <p>A top-tier mobile app that allows companies to perfectly track their global shipments
-                                    from anywhere.</p>
+                                <h3>Pharmacy Management System</h3>
+                                <p>A pharmacy system for prescription dispensing, drug inventory with batch/expiry
+                                    tracking, interaction checks, and POS/claims integration to ensure safety and faster
+                                    service.</p>
                             </div>
                         </div>
-                        <!-- Project 4 -->
-                        <div class="project-card card">
-                            <div class="project-image">
-                                <img src="images/project3.png" alt="Logistics Mobile MVP">
-                            </div>
-                            <div class="project-info">
-                                <h3>Logistics Tracking System</h3>
-                                <p>A top-tier mobile app that allows companies to perfectly track their global shipments
-                                    from anywhere.</p>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Testimonial Section -->
-        <section class="testimonial section fade-in">
+        <!-- <section class="testimonial section fade-in">
             <div class="container">
                 <div class="testimonial-card card">
                     <div class="quote-icon">"</div>
@@ -203,18 +246,27 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
 
         <section id="contact" class="contact section">
             <div class="container">
                 <div class="contact-wrapper card fade-in">
                     <div class="contact-info">
-                        <h2>Partner With Us</h2>
+                        <h2>Partner With Us </h2>
                         <p>Contact our engineering team to discuss your technical requirements and operational
                             challenges.</p>
                         <div class="info-item">
                             <span class="icon"></span>
-                            <span>Abdiolbelachew@gmail.com</span>
+                            <span>Abdiol4322@gmail.com</span>
                         </div>
                         <div class="info-item">
                             <span class="icon"></span>
@@ -228,7 +280,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Work Email</label>
-                            <input type="email" id="email" required placeholder="Abdiolbelachew@gmail.com">
+                            <input type="email" id="email" required placeholder="Abdiol4322@gmail.com">
                         </div>
                         <div class="form-group">
                             <label for="message">Project Details</label>
@@ -251,7 +303,7 @@
                     </a>
                     <p>Building software that grows your business.</p>
                     <p>+251 966 780 537</p>
-                    <p>Abdiolbelachew@gmail.com</p>
+                    <p>Abdiol4322@gmail.com</p>
 
                 </div>
                 <div class="footer-column">
@@ -279,6 +331,15 @@
         </div>
     </footer>
 
+    <!-- Floating Action Button (Loveable) -->
+    <a href="#contact" class="fab-button">
+        <span class="fab-icon"></span>
+        <span class="fab-text">Chat with us!</span>
+    </a>
+
+    <!-- Config & Supabase Library -->
+    <script src="js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/script.js"></script>
 </body>
 
