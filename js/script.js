@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Supabase Initialization (Hardcoded for simplicity)
+    // 0. Supabase Initialization (Mandatory .env via Vite)
     let supabaseClient = null;
     try {
-        const SUPABASE_URL = 'https://yknnbmdovhlotxiaexxt.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlrbm5ibWRvdmhsb3R4aWFleHh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyNjkzNTMsImV4cCI6MjA4OTg0NTM1M30.6YSaHwh84DsqbYIyFp3EtoqNKtbTibqJfjScyQxT-fo';
+        const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
+        const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
         
         if (SUPABASE_URL && SUPABASE_ANON_KEY && typeof window.supabase !== 'undefined') {
             supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
