@@ -1,9 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 0. Supabase Initialization (Mandatory .env via Vite)
+document.addEventListener('DOMContentLoaded', async () => {
+    // Fetch and parse the .env file asynchronously
+    if (typeof window.loadEnv === 'function') {
+        await window.loadEnv();
+    }
+
+    // 0. Supabase Initialization
     let supabaseClient = null;
     try {
-        const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
-        const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+        const SUPABASE_URL = window.ENV?.SUPABASE_URL || window.ENV?.VITE_SUPABASE_URL || '';
+        const SUPABASE_ANON_KEY = window.ENV?.SUPABASE_ANON_KEY || window.ENV?.VITE_SUPABASE_ANON_KEY || '';
         
         if (SUPABASE_URL && SUPABASE_ANON_KEY && typeof window.supabase !== 'undefined') {
             supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
