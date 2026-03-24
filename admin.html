@@ -10,56 +10,186 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
         rel="stylesheet">
     <style>
+        body {
+            background-color: #fafbfd; /* Very light, clean background */
+        }
+
         .admin-page {
-            padding-top: 120px;
+            padding-top: 130px;
+            padding-bottom: 80px;
             min-height: 100vh;
         }
 
         .admin-header {
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .admin-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+            color: #0f172a;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .admin-header p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        .controls-bar {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
         }
 
         .inquiry-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .inquiry-card {
+            background: #ffffff;
             padding: 2rem;
-            border-left: 4px solid var(--accent-1);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
         }
 
-        .inquiry-meta {
+        .inquiry-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .inquiry-header {
             display: flex;
-            gap: 2rem;
-            margin-bottom: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .sender-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .sender-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .sender-email {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: #64748b;
+            text-decoration: none;
+        }
+        
+        .sender-email:hover {
+            color: var(--accent-1);
+        }
+
+        .inquiry-date {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 500;
         }
 
         .inquiry-content {
             font-size: 1.05rem;
             line-height: 1.7;
-            color: var(--text-primary);
+            color: #475569;
+            white-space: pre-wrap;
         }
 
         .status-badge {
-            background: var(--accent-glow);
-            color: var(--accent-1);
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 0.8rem;
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .status-badge.connected {
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .status-badge.error {
+            background: #fef2f2;
+            color: #dc2626;
         }
 
         .no-data {
             text-align: center;
-            padding: 5rem;
-            color: var(--text-secondary);
+            padding: 5rem 2rem;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px dashed #cbd5e1;
+            color: #64748b;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            .admin-page {
+                padding-top: 100px;
+            }
+
+            .admin-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .controls-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .search-box {
+                width: 100% !important;
+            }
+
+            .inquiry-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .inquiry-date {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sender-name {
+                font-size: 1.1rem;
+            }
+
+            .inquiry-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -74,91 +204,205 @@
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Main Site</a>
                 <div class="nav-auth">
-                    <span class="status-badge" id="authStatus">Connected to Supabase</span>
+                    <button onclick="handleLogout()" class="btn-primary btn-sm" style="background: #f1f5f9; color: #1e293b; border: 1px solid #e2e8f0;">Logout</button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main class="admin-page">
+    <div class="admin-page">
         <div class="container">
             <div class="admin-header">
                 <div>
-                    <h1>Client Inquiries</h1>
-                    <p>Manage and respond to all incoming project requests.</p>
+                    <h1>Inquiries Manager</h1>
+                    <p>Review and respond to client messages.</p>
                 </div>
-                <button class="btn-primary" onclick="loadInquiries()">Refresh Data</button>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1rem;">
+                    <div id="authStatus" class="status-badge">
+                        <span class="status-indicator"></span> Checking connection...
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Search and Filter Bar -->
+            <div class="controls-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: #fff; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="font-weight: 600; color: var(--text-secondary);">
+                    Total Inquiries: <span id="totalCount" style="color: var(--text-primary);">0</span>
+                </div>
+                <div class="search-box" style="position: relative; width: 300px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94a3b8;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="searchInput" placeholder="Search by name, email, or message..." style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border-radius: 8px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s;" onkeyup="filterInquiries()">
+                </div>
             </div>
 
             <div id="inquiryList" class="inquiry-grid">
-                <div class="no-data">Loading inquiries from secure vault...</div>
+                <!-- Data will populate here -->
             </div>
         </div>
-    </main>
+    </div>
 
-    <script src="js/config.js?v=1.1"></script>
+    <!-- Ensure Supabase script is loaded BEFORE your logic -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js?v=1.1"></script>
     <script>
+        // Global Supabase client for reuse
+        let supabaseClient = null;
+        let allInquiries = [];
+
         document.addEventListener('DOMContentLoaded', async () => {
-            if (typeof window.loadEnv === 'function') await window.loadEnv();
+            if (typeof window.loadEnv === 'function') {
+                await window.loadEnv();
+            }
+
+            // Initialize client early
+            supabaseClient = window.supabase.createClient(
+                window.ENV.SUPABASE_URL,
+                window.ENV.SUPABASE_ANON_KEY
+            );
+
+            // AUTH CHECK: Redirect if not logged in
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            const bypass = localStorage.getItem('admin_bypass_session') === 'true';
+
+            if (!session && !bypass) {
+                window.location.href = 'login.html';
+                return;
+            }
+
             loadInquiries();
         });
 
+        async function handleLogout() {
+            localStorage.removeItem('admin_bypass_session');
+            if (supabaseClient) {
+                await supabaseClient.auth.signOut();
+            }
+            window.location.href = 'login.html';
+        }
+
+        function renderInquiries(dataToRender) {
+            const list = document.getElementById('inquiryList');
+            const countDisplay = document.getElementById('totalCount');
+            
+            countDisplay.textContent = dataToRender.length;
+
+            if (!dataToRender || dataToRender.length === 0) {
+                list.innerHTML = `
+                    <div class="no-data">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; color: #cbd5e1;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h3 style="font-family: 'Outfit', sans-serif; color: var(--text-primary); margin-bottom: 0.5rem;">No Results Found</h3>
+                        <p>No inquiries match your search criteria.</p>
+                    </div>`;
+                return;
+            }
+
+            list.innerHTML = dataToRender.map(item => `
+                <div class="inquiry-card fade-in appear">
+                    <div class="inquiry-header">
+                        <div class="sender-info">
+                            <span class="sender-name">${item.name || 'Anonymous'}</span>
+                            <a href="mailto:${item.email}" class="sender-email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                ${item.email}
+                            </a>
+                        </div>
+                        <span class="inquiry-date">${new Date(item.created_at || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    </div>
+                    <div class="inquiry-content">${item.message}</div>
+                </div>
+            `).join('');
+        }
+
+        function filterInquiries() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = allInquiries.filter(item => {
+                return (item.name && item.name.toLowerCase().includes(searchTerm)) ||
+                       (item.email && item.email.toLowerCase().includes(searchTerm)) ||
+                       (item.message && item.message.toLowerCase().includes(searchTerm));
+            });
+            renderInquiries(filtered);
+        }
+
         async function loadInquiries() {
             const list = document.getElementById('inquiryList');
+            const statusBadge = document.getElementById('authStatus');
+            const countDisplay = document.getElementById('totalCount');
             
-            // 0. Check for file:// protocol (CORS blocks fetch on file system)
+            // 0. Check for file:// protocol
             if (window.location.protocol === 'file:') {
+                statusBadge.innerHTML = '<span class="status-indicator"></span> Disconnected (Local File)';
+                statusBadge.className = 'status-badge error';
                 list.innerHTML = `
-                    <div class="no-data card" style="border-left-color: #f59e0b; text-align: left;">
-                        <h3 style="color: #d97706; margin-bottom: 1rem;">⚠️ Local File Detected</h3>
+                    <div class="no-data card" style="border-left-color: #f59e0b; text-align: left; padding: 3rem;">
+                        <h3 style="color: #d97706; margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">⚠️ Local File Detected</h3>
                         <p>Browser security prevents data from loading when you open the file directly from your folder.</p>
                         <div style="background: rgba(217, 119, 6, 0.05); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; border: 1px solid rgba(217, 119, 6, 0.1);">
                             <strong style="display: block; margin-bottom: 0.5rem;">How to fix this:</strong>
                             <ol style="margin-left: 1.2rem; line-height: 1.6;">
-                                <li>Check your <strong>VS Code Terminal</strong> (it's already running!)</li>
-                                <li>Find the URL (usually <code>http://localhost:3000</code> or similar)</li>
-                                <li><strong>Ctrl + Click</strong> that link to open it in your browser</li>
+                                <li>Check your <strong>VS Code Terminal</strong></li>
+                                <li>Find the URL (e.g., <code>http://localhost:3000</code>)</li>
+                                <li><strong>Ctrl + Click</strong> that link and navigate to <code>/admin.html</code></li>
                             </ol>
                         </div>
                     </div>`;
                 return;
             }
+
             try {
-                const supabaseClient = window.supabase.createClient(
-                    window.ENV.SUPABASE_URL,
-                    window.ENV.SUPABASE_ANON_KEY
-                );
+                if (!supabaseClient) {
+                    throw new Error('Supabase client not initialized.');
+                }
+
+                statusBadge.innerHTML = '<span class="status-indicator" style="animation: pulse 1.5s infinite;"></span> Connecting...';
+                
+                const projectID = window.ENV.SUPABASE_URL.split('//')[1].split('.')[0];
+                console.log('Supabase Request', { url: window.ENV.SUPABASE_URL, projectID });
 
                 const { data, error } = await supabaseClient
                     .from('inquiries')
                     .select('*')
-                    .order('created_at', { ascending: false });
+                    .order('created_at', { ascending: false }); // Added order back since it works now
+
+                console.log('Supabase Response:', { data, error });
 
                 if (error) throw error;
 
+                statusBadge.innerHTML = '<span class="status-indicator"></span> Connected (Live Data)';
+                statusBadge.className = 'status-badge connected';
+
                 if (!data || data.length === 0) {
-                    list.innerHTML = '<div class="no-data card">No inquiries found yet. All systems clear.</div>';
+                    allInquiries = [];
+                    renderInquiries([]);
                     return;
                 }
 
-                list.innerHTML = data.map(item => `
-                    <div class="inquiry-card card fade-in appear">
-                        <div class="inquiry-meta">
-                            <span><strong>From:</strong> ${item.name}</span>
-                            <span><strong>Email:</strong> ${item.email}</span>
-                            <span><strong>Date:</strong> ${new Date(item.created_at || Date.now()).toLocaleDateString()}</span>
-                        </div>
-                        <div class="inquiry-content">${item.message}</div>
-                    </div>
-                `).join('');
+                // Save globally for search filtering
+                allInquiries = data;
+                renderInquiries(allInquiries);
 
             } catch (err) {
                 console.error('Fetch error:', err);
-                list.innerHTML = `<div class="no-data card">Error loading inquiries: ${err.message}. Ensure Row Level Security (RLS) allows reading on the table.</div>`;
+                statusBadge.innerHTML = '<span class="status-indicator"></span> Connection Error';
+                statusBadge.className = 'status-badge error';
+                list.innerHTML = `
+                    <div class="no-data" style="border-left: 6px solid #ef4444; text-align: left; padding: 3rem;">
+                        <h3 style="color: #ef4444; margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">❌ Error Loading Data</h3>
+                        <p>${err.message}</p>
+                        <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            <strong>Common issues:</strong><br>
+                            • Supabase table 'inquiries' doesn't exist<br>
+                            • RLS (Row Level Security) is blocking the read request<br>
+                            • Network connection is offline
+                        </p>
+                    </div>`;
             }
         }
     </script>
 </body>
+</html>dy>
 
 </html>

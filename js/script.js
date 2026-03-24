@@ -113,9 +113,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             btn.disabled = true;
 
             try {
-                const { error } = await supabaseClient
+                const submitData = { name, email, message };
+                console.log('Attempting to insert into Supabase:', submitData);
+
+                const { data, error } = await supabaseClient
                     .from('inquiries')
-                    .insert([{ name, email, message }]);
+                    .insert([submitData])
+                    .select(); // Add .select() to get the inserted row back
+
+                console.log('Insert Response:', { data, error });
 
                 if (error) throw error;
 
@@ -131,7 +137,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }, 4000);
 
             } catch (err) {
-                console.error('Error submitting form:', err.message);
+                console.error('Error submitting form Details:', err);
                 btn.textContent = 'Error! Try Again';
                 btn.style.background = '#ef4444'; // red
 

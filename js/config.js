@@ -21,6 +21,7 @@ window.loadEnv = async function() {
                 }
             });
             console.log('Environment loaded from .env');
+            console.log('Detected keys:', Object.keys(window.ENV));
             return;
         }
     } catch (e) {}
