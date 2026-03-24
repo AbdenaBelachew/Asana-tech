@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Portal | Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .admin-page {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .inquiry-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .inquiry-card {
+            padding: 2rem;
+            border-left: 4px solid var(--accent-1);
+        }
+
+        .inquiry-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .inquiry-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .status-badge {
+            background: var(--accent-glow);
+            color: var(--accent-1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 5rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="brand-text">Asana<span class="brand-accent">Systems</span></span>
+                <img src="images/asana%20png.png" alt="Asana Systems" class="mobile-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Main Site</a>
+                <div class="nav-auth">
+                    <span class="status-badge" id="authStatus">Connected to Supabase</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-page">
+        <div class="container">
+            <div class="admin-header">
+                <div>
+                    <h1>Client Inquiries</h1>
+                    <p>Manage and respond to all incoming project requests.</p>
+                </div>
+                <button class="btn-primary" onclick="loadInquiries()">Refresh Data</button>
+            </div>
+
+            <div id="inquiryList" class="inquiry-grid">
+                <div class="no-data">Loading inquiries from secure vault...</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/config.js?v=1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (typeof window.loadEnv === 'function') await window.loadEnv();
+            loadInquiries();
+        });
+
+        async function loadInquiries() {
+            const list = document.getElementById('inquiryList');
+            
+            // 0. Check for file:// protocol (CORS blocks fetch on file system)
+            if (window.location.protocol === 'file:') {
+                list.innerHTML = `
+                    <div class="no-data card" style="border-left-color: #f59e0b; text-align: left;">
+                        <h3 style="color: #d97706; margin-bottom: 1rem;">⚠️ Local File Detected</h3>
+                        <p>Browser security prevents data from loading when you open the file directly from your folder.</p>
+                        <div style="background: rgba(217, 119, 6, 0.05); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; border: 1px solid rgba(217, 119, 6, 0.1);">
+                            <strong style="display: block; margin-bottom: 0.5rem;">How to fix this:</strong>
+                            <ol style="margin-left: 1.2rem; line-height: 1.6;">
+                                <li>Check your <strong>VS Code Terminal</strong> (it's already running!)</li>
+                                <li>Find the URL (usually <code>http://localhost:3000</code> or similar)</li>
+                                <li><strong>Ctrl + Click</strong> that link to open it in your browser</li>
+                            </ol>
+                        </div>
+                    </div>`;
+                return;
+            }
+            try {
+                const supabaseClient = window.supabase.createClient(
+                    window.ENV.SUPABASE_URL,
+                    window.ENV.SUPABASE_ANON_KEY
+                );
+
+                const { data, error } = await supabaseClient
+                    .from('inquiries')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                if (!data || data.length === 0) {
+                    list.innerHTML = '<div class="no-data card">No inquiries found yet. All systems clear.</div>';
+                    return;
+                }
+
+                list.innerHTML = data.map(item => `
+                    <div class="inquiry-card card fade-in appear">
+                        <div class="inquiry-meta">
+                            <span><strong>From:</strong> ${item.name}</span>
+                            <span><strong>Email:</strong> ${item.email}</span>
+                            <span><strong>Date:</strong> ${new Date(item.created_at || Date.now()).toLocaleDateString()}</span>
+                        </div>
+                        <div class="inquiry-content">${item.message}</div>
+                    </div>
+                `).join('');
+
+            } catch (err) {
+                console.error('Fetch error:', err);
+                list.innerHTML = `<div class="no-data card">Error loading inquiries: ${err.message}. Ensure Row Level Security (RLS) allows reading on the table.</div>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

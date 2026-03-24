@@ -185,7 +185,8 @@ h3 {
         min-width: 100%;
         border-radius: 0;
         border: none;
-        background: transparent; /* Changed from var(--bg-color) */
+        background: transparent;
+        /* Changed from var(--bg-color) */
         padding: 1rem 0;
         backdrop-filter: none;
     }
@@ -227,6 +228,10 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-left: 2px;
+}
+
+.mobile-logo {
+    display: none;
 }
 
 .nav-links {
@@ -1135,7 +1140,8 @@ h3 {
 }
 
 .social-icon::before {
-    display: none; /* Disable the arrow hover effect for social icons */
+    display: none;
+    /* Disable the arrow hover effect for social icons */
 }
 
 .social-icon:hover {
@@ -1504,10 +1510,21 @@ h3 {
     }
 
     /* Staggered Animations */
-    .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
-    .nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
-    .nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
-    .nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+    .nav-links.active a:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav-links.active a:nth-child(2) {
+        transition-delay: 0.15s;
+    }
+
+    .nav-links.active a:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    .nav-links.active a:nth-child(4) {
+        transition-delay: 0.25s;
+    }
 
     .nav-links a:hover {
         background: rgba(37, 99, 235, 0.08);
@@ -1531,12 +1548,15 @@ h3 {
     }
 
     .navbar .brand-text {
-        font-size: 1.8rem;
-        background: var(--grad-primary);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: -1px;
+        display: none;
+    }
+
+    .navbar .mobile-logo {
+        display: block;
+        height: 28px;
+        width: auto;
+        object-fit: contain;
+        margin-left: 10px;
     }
 
     .navbar .brand-accent {
@@ -1582,7 +1602,7 @@ h3 {
     .footer-contact-info {
         align-items: center;
     }
-    
+
     .contact-link {
         justify-content: center;
     }
@@ -1590,7 +1610,7 @@ h3 {
     .footer-column {
         align-items: center;
     }
-    
+
     .footer-column h4::after {
         left: 50%;
         transform: translateX(-50%);
@@ -1599,11 +1619,11 @@ h3 {
     .footer-column a:hover {
         transform: translateX(0) scale(1.05);
     }
-    
+
     .footer-column a:hover::before {
         display: none;
     }
-    
+
     .social-links {
         justify-content: center;
     }
@@ -1613,7 +1633,7 @@ h3 {
         gap: 1.5rem;
         text-align: center;
     }
-    
+
     .footer-legal {
         flex-wrap: wrap;
         justify-content: center;

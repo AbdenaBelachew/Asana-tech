@@ -1,6 +1,10 @@
 window.ENV = {};
 
 window.loadEnv = async function() {
+    if (window.location.protocol === 'file:') {
+        console.error('CORS Error: You are opening index.html directly from your file system. Fetch() requests like .env will be blocked by your browser for security. Please run "npm run dev" and use the localhost URL instead.');
+        return;
+    }
     // 1. Try fetching .env (Works locally)
     try {
         const response = await fetch('/.env');
