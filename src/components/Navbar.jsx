@@ -65,18 +65,18 @@ export default function Navbar() {
         >
           {/* Brand */}
           <button type="button" onClick={() => goTo('home')} className="nav-brand group">
-            <img
-              src="/images/green.png"
+           <img
+              src="/images/asana.png"
               alt="Asana Systems"
-              className="w-10 h-11 sm:w-11 sm:h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+              className="w-24 h-28 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-display font-extrabold uppercase leading-tight text-left">
+            {/* <span className="font-display font-extrabold uppercase leading-tight text-left">
               <span className="md:hidden block text-[1.05rem] tracking-wide text-slate-900">ASANA</span>
               <span className="hidden md:block">
                 <span className="block text-[1.05rem] tracking-wide text-slate-900">ASANA</span>
                 <span className="block text-[10px] font-bold tracking-[0.2em] text-[#166804]">SYSTEMS</span>
               </span>
-            </span>
+            </span> */}
           </button>
 
           {/* Desktop links */}
