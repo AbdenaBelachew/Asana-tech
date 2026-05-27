@@ -128,7 +128,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-[#166804]/12 text-center">
           <p className="text-xs font-semibold text-slate-800 tracking-wide">
-            &copy; {new Date().getFullYear()} Asana Systems. Crafted with precision in Addis Ababa.
+            &copy; {new Date().getFullYear()} Asana Systems. All rights reserved.
           </p>
         </div>
       </div>

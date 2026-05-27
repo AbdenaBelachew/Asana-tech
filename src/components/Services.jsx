@@ -2,8 +2,12 @@ import React from 'react';
 import { Laptop, Smartphone, Package, QrCode, MessageSquareCode, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const services = [
-  { icon: Laptop, title: 'Websites and Ecommerce Softwares', desc: 'Professional corporate websites and complex web apps designed to maximize your conversions and rank #1 on Google search.', accent: false },
-  { icon: Smartphone, title: 'Mobile App Development', desc: 'Breathtaking and blazing-fast iOS and Android apps with full offline-first capabilities, push notifications, and clean dashboards.', accent: true },
+  {
+  icon: Laptop,
+  title: "Websites and Ecommerce Softwares",
+  desc: "Professional corporate websites and ecommerce software built to increase conversions, improve UX, and strengthen your online presence.",
+  accent: false
+}, { icon: Smartphone, title: 'Mobile App Development', desc: 'Breathtaking and blazing-fast iOS and Android apps with full offline-first capabilities, push notifications, and clean dashboards.', accent: true },
   { icon: Package, title: 'Inventory & Warehouse ERP', desc: 'Real-time stock tracking, advanced barcode scanning, and intelligent supply chain controls to eliminate inventory shrinkage.', accent: false },
   { icon: QrCode, title: 'Restaurant QR Menus', desc: 'Contactless digital menus with instant menu price updates, interactive ordering dashboards, and comprehensive vendor analytics.', accent: true },
   { icon: MessageSquareCode, title: 'Enterprise Tech Consultation', desc: 'Strategic architecture advice on cloud server deployments, security compliance, and technology stack optimization.', accent: false },

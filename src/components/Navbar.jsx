@@ -80,7 +80,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1 nav-links-pill">
+          <div className="hidden md:flex items-center  gap-1 nav-links-pill">
             {links.map((l) => (
               <button
                 key={l.id}
