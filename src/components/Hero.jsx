@@ -8,7 +8,7 @@ function scrollTo(id) {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="section-inner py-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center animate-fade-up">
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           <span
@@ -21,7 +21,7 @@ export default function Hero() {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-5 font-display">
             Software Built <br className="hidden sm:inline" />
-            to <span className="gradient-text">Scale</span> Your Business
+            to <span className="color-brand">Scale</span> Your Business
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-lg">
