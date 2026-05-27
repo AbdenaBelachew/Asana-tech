@@ -24,15 +24,23 @@ export default function Hero() {
             to <span className="gradient-text">Scale</span> Your Business
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-lg">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-lg">
             We design and build fast websites, modern mobile apps, and custom inventory ERP software designed for your business growth.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button type="button" onClick={() => scrollTo('contact')} className="btn-primary">
+          <div className="flex flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+            <button
+              type="button"
+              onClick={() => scrollTo('contact')}
+              className="btn-primary !px-4 !py-2.5 !text-xs sm:!px-8 sm:!py-4 sm:!text-sm flex-1 sm:flex-initial"
+            >
               Start a Project <ArrowRight size={17} />
             </button>
-            <button type="button" onClick={() => scrollTo('services')} className="btn-secondary">
+            <button
+              type="button"
+              onClick={() => scrollTo('services')}
+              className="btn-secondary !px-4 !py-2.5 !text-xs sm:!px-8 sm:!py-4 sm:!text-sm flex-1 sm:flex-initial"
+            >
               See Our Services
             </button>
           </div>

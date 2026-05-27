@@ -43,8 +43,8 @@ export default function Footer() {
               onClick={() => handleScrollTo('home')}
               className="flex items-center gap-2.5 group cursor-pointer"
             >
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-white border border-[#166804]/15 overflow-hidden shadow-sm">
-                <img src="/images/asana png.png" alt="Asana Systems" className="w-5 h-5 object-contain" />
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white border border-[#166804]/15 overflow-hidden shadow-sm">
+                <img src="/images/green.png" alt="Asana Systems" className="w-10 h-10 object-contain" />
               </div>
               <span className="font-display font-extrabold text-xl tracking-wide text-slate-900">
                 ASANA-SYSTEMS<span className="text-[#166804] font-bold"> LTD</span>
