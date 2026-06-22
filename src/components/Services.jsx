@@ -1,5 +1,5 @@
 import React from 'react';
-import { Laptop, Smartphone, Package, QrCode, MessageSquareCode, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Laptop, Smartphone, Package, QrCode, ShieldCheck, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const services = [
@@ -31,13 +31,6 @@ const services = [
     desc: 'Contactless digital menus with instant price updates, ordering dashboards, and vendor analytics.',
     accent: true,
     area: 'qr',
-  },
-  {
-    icon: MessageSquareCode,
-    title: 'Tech Consultation',
-    desc: 'Cloud architecture, security compliance, and stack optimization from engineers who ship production code.',
-    accent: false,
-    area: 'consult',
   },
   {
     icon: ShieldCheck,
@@ -75,7 +68,7 @@ export default function Services() {
               <ScrollReveal
                 key={s.title}
                 delay={i * 0.06}
-                className={`service-bento-cell service-bento-cell--${s.area} ${isFeatured ? 'lg:col-span-1 lg:row-span-2' : ''}`}
+                className={`service-bento-cell service-bento-cell--${s.area}`}
               >
                 <div
                   className={`group service-card glass-card mobile-grid-card flex flex-col h-full hover:-translate-y-1.5 ${
@@ -87,7 +80,7 @@ export default function Services() {
                   </span>
 
                   <div className={`service-card-icon icon-box shrink-0 group-hover:scale-105 ${s.accent ? 'icon-box-accent' : ''}`}>
-                    <Icon size={isFeatured ? 22 : 18} />
+                    <Icon size={18} />
                   </div>
 
                   <div className="service-card-body min-w-0 flex flex-col flex-1">

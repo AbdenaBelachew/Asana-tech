@@ -147,8 +147,7 @@
     grid-template-areas:
       "featured featured"
       "mobile inventory"
-      "qr inventory"
-      "consult shop" !important;
+      "qr shop" !important;
     gap: 0.625rem !important;
   }
 
@@ -156,7 +155,6 @@
   .service-bento-cell--mobile { grid-area: mobile; }
   .service-bento-cell--inventory { grid-area: inventory; }
   .service-bento-cell--qr { grid-area: qr; }
-  .service-bento-cell--consult { grid-area: consult; }
   .service-bento-cell--shop { grid-area: shop; }
 
   .services-bento .service-card {
@@ -494,7 +492,7 @@
 }
 
 .service-card--featured .service-card-icon {
-  @apply w-12 h-12 lg:w-14 lg:h-14;
+  @apply w-12 h-12;
 }
 
 .service-card-title {
@@ -502,7 +500,7 @@
 }
 
 .service-card--featured .service-card-title {
-  @apply text-base sm:text-lg lg:text-xl;
+  @apply text-base sm:text-lg;
 }
 
 .service-card-desc {
@@ -510,7 +508,7 @@
 }
 
 .service-card--featured .service-card-desc {
-  @apply text-xs sm:text-sm lg:text-sm;
+  @apply text-xs sm:text-sm;
 }
 
 .service-card-cta {
@@ -531,8 +529,7 @@
     grid-template-areas:
       "featured featured"
       "mobile inventory"
-      "qr shop"
-      "consult consult" !important;
+      "qr shop" !important;
     gap: 0.875rem !important;
   }
 
@@ -578,7 +575,6 @@
   .service-bento-cell--mobile,
   .service-bento-cell--inventory,
   .service-bento-cell--qr,
-  .service-bento-cell--consult,
   .service-bento-cell--shop {
     grid-area: auto;
   }
@@ -588,7 +584,6 @@
     flex-direction: column !important;
     grid-template-columns: unset !important;
     grid-template-rows: unset !important;
-    padding: 2rem !important;
   }
 
   .services-bento .service-card--featured .service-card-icon,
@@ -597,8 +592,20 @@
     grid-column: auto;
   }
 
-  .service-bento-cell--featured {
-    grid-row: span 2;
+  .service-card--featured .service-card-icon {
+    @apply w-12 h-12 mb-6;
+  }
+
+  .service-card--featured .service-card-title {
+    @apply text-lg;
+  }
+
+  .service-card--featured .service-card-desc {
+    @apply text-sm;
+  }
+
+  .service-card--featured .service-card-cta {
+    @apply text-xs;
   }
 }
 

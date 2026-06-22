@@ -1,56 +1,115 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, X, TrendingUp, Package, HeartPulse } from 'lucide-react';
+import { ExternalLink, X, HeartPulse, ShoppingBag, CalendarDays, Plane } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import drmotiImg from '../assets/drmoti.png';
+import kansenaImg from '../assets/kansena.png';
+import womoveImg from '../assets/womove.png';
+import yeroonImg from '../assets/yeroon.png';
+import liduImg from '../assets/lidu.png';
 
 const categories = [
   { id: 'all', label: 'All Projects' },
-  { id: 'finance', label: 'Finance' },
-  { id: 'retail', label: 'Retail & ERP' },
-  { id: 'medical', label: 'Healthcare' },
+  { id: 'healthcare', label: 'Healthcare' },
+  { id: 'retail', label: 'Retail & E-Commerce' },
+  { id: 'events', label: 'Events & Media' },
+  { id: 'travel', label: 'Travel' },
 ];
 
 const projectMeta = {
-  finance: { icon: TrendingUp, gradient: 'from-emerald-600/80 to-teal-900/90' },
-  retail: { icon: Package, gradient: 'from-blue-600/80 to-indigo-900/90' },
-  medical: { icon: HeartPulse, gradient: 'from-rose-600/80 to-purple-900/90' },
+  healthcare: { icon: HeartPulse, gradient: 'from-rose-600/80 to-purple-900/90' },
+  retail: { icon: ShoppingBag, gradient: 'from-blue-600/80 to-indigo-900/90' },
+  events: { icon: CalendarDays, gradient: 'from-amber-600/80 to-orange-900/90' },
+  travel: { icon: Plane, gradient: 'from-cyan-600/80 to-blue-900/90' },
 };
 
 const projects = [
   {
     id: 1,
-    title: 'Forex Exchange Office System',
-    category: 'finance',
-    desc: 'Real-time rate integrations, multi-currency ledgers, cashier terminals, and automated bank reconciliations for forex offices.',
-    tech: ['React.js', 'PostgreSQL', 'FastAPI', 'WebSockets'],
-    metrics: { latency: '35ms', uptime: '99.99%', volume: '$2.5M/day' },
-    challenges: 'Synchronizing volatile exchange rates across multiple branches with sub-second latency while maintaining ledger atomicity.',
-    solutions: 'Event-driven WebSocket pipeline backed by Redis, with database isolation transactions to prevent double-spending.',
+    title: 'Dr. Moti Ortho',
+    category: 'healthcare',
+    url: 'https://drmoti-ortho.vercel.app/',
+    image: drmotiImg,
+    desc: 'Professional website for Dr. Moti Mulatu, orthopedic surgeon in Adama — services, credentials, and patient-friendly appointment flow.',
+    tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
+    metrics: { latency: '380ms', uptime: '99.9%', volume: 'Adama, ET' },
+    challenges: 'Building trust online for a medical practice while keeping information clear and accessible on mobile devices.',
+    solutions: 'Mobile-first responsive design, fast Vercel deployment, and structured service pages with clear contact CTAs.',
   },
   {
     id: 2,
-    title: 'Shop Inventory Management System',
+    title: 'Kan Seenaa Closet',
     category: 'retail',
-    desc: 'Cloud ERP tracking stock, purchase orders, and vendor payments across warehouses with barcode scanning and low-stock alerts.',
-    tech: ['Next.js', 'GraphQL', 'AWS Lambdas', 'Node.js'],
-    metrics: { latency: '48ms', uptime: '99.95%', volume: '18k orders/day' },
-    challenges: 'Real-time stock sync across 15 high-volume storefronts with massive concurrency spikes.',
-    solutions: 'Optimistic client-side UI sync with DynamoDB global tables and strong read consistency for precise stock records.',
+    url: 'https://kansena-closet.vercel.app/',
+    image: kansenaImg,
+    desc: 'Fashion e-commerce storefront for Kan Seenaa Closet — brand storytelling, product showcase, and a polished “Wear Your Royalty” experience.',
+    tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
+    metrics: { latency: '410ms', uptime: '99.9%', volume: 'E-Commerce' },
+    challenges: 'Translating a premium fashion brand into a digital storefront that feels elegant on every screen size.',
+    solutions: 'Visual-first layout, smooth animations, and a lightweight stack deployed globally on Vercel.',
   },
   {
     id: 3,
-    title: 'Pharmacy Management System',
-    category: 'medical',
-    desc: 'Prescription dispensing, drug interaction checks, batch expiry notifications, and insurance claim approvals.',
-    tech: ['React', 'Supabase', 'Python', 'TailwindCSS'],
-    metrics: { latency: '40ms', uptime: '99.99%', volume: '8.4k patients/day' },
-    challenges: 'Cross-referencing prescriptions against drug interaction libraries in real-time without processing delays.',
-    solutions: 'Pre-indexed drug libraries in PostgreSQL full-text search stores, enabling lexical matching under 15ms.',
+    title: 'Womove Active',
+    category: 'retail',
+    url: 'https://womove-active.vercel.app/',
+    image: womoveImg,
+    desc: 'Activewear brand website — “Built to Move. Made to Be Seen.” Product highlights, brand identity, and mobile-first shopping flow.',
+    tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
+    metrics: { latency: '395ms', uptime: '99.9%', volume: 'Activewear' },
+    challenges: 'Capturing an energetic fitness brand identity while keeping product browsing fast and intuitive.',
+    solutions: 'Bold typography, responsive product grids, and optimized assets for quick load times on mobile.',
+  },
+  {
+    id: 4,
+    title: 'Meri Didha Events',
+    category: 'events',
+    url: 'https://merididha.netlify.app/',
+    desc: 'Event promotion platform for Meri Didha Promotion & Events — upcoming events, promotions, podcast, team, and contact in Addis Ababa.',
+    tech: ['React', 'TailwindCSS', 'Netlify'],
+    metrics: { latency: '450ms', uptime: '99.9%', volume: '200+ Events' },
+    challenges: 'Showcasing diverse events, promotions, and podcast content in one cohesive, easy-to-navigate site.',
+    solutions: 'Section-based layout with event cards, promotion highlights, and YouTube podcast integration on Netlify.',
+  },
+  {
+    id: 5,
+    title: 'Yeroon Travel',
+    category: 'travel',
+    url: 'https://yeroon-travel.vercel.app/',
+    image: yeroonImg,
+    desc: 'Travel agency website for Yeroon Travel in Piassa, Addis Ababa — Dubai packages, flights, destinations, and booking inquiries.',
+    tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
+    metrics: { latency: '400ms', uptime: '99.9%', volume: 'Piassa, AA' },
+    challenges: 'Presenting travel packages and destination info in a way that drives inquiries from local customers.',
+    solutions: 'Destination-focused pages, clear package pricing sections, and prominent contact CTAs deployed on Vercel.',
+  },
+  {
+    id: 6,
+    title: 'Lidya Lifestyle',
+    category: 'retail',
+    url: 'https://lidu-store.vercel.app/',
+    image: liduImg,
+    desc: 'Lifestyle e-commerce store — “God Is In The Details.” Curated products, refined brand presentation, and a seamless shopping experience.',
+    tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
+    metrics: { latency: '405ms', uptime: '99.9%', volume: 'Lifestyle' },
+    challenges: 'Reflecting a detail-oriented lifestyle brand online while keeping product discovery simple and elegant.',
+    solutions: 'Clean product-focused layout, subtle brand styling, and fast Vercel hosting for a polished storefront.',
   },
 ];
 
-function ProjectVisual({ category }) {
-  const { icon: Icon, gradient } = projectMeta[category] ?? projectMeta.finance;
+function ProjectVisual({ image, category, title }) {
+  if (image) {
+    return (
+      <img
+        src={image}
+        alt={`${title} website preview`}
+        className="w-full h-full object-cover object-top"
+        loading="lazy"
+      />
+    );
+  }
+
+  const { icon: Icon, gradient } = projectMeta[category] ?? projectMeta.retail;
   return (
     <div className={`relative w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
       <div className="absolute inset-0 opacity-20">
@@ -113,7 +172,7 @@ export default function Portfolio() {
                 className="group glass-card keep-glass-mobile overflow-hidden cursor-pointer flex flex-col !p-0 hover:-translate-y-1 h-full"
               >
                 <div className="relative overflow-hidden aspect-video border-b border-[#166804]/8 bg-slate-900">
-                  <ProjectVisual category={project.category} />
+                  <ProjectVisual image={project.image} category={project.category} title={project.title} />
                   <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="px-4 py-2 rounded-full text-xs font-bold bg-white text-[#166804] shadow-lg flex items-center gap-1.5">
                       View Details <ExternalLink size={12} />
@@ -137,7 +196,7 @@ export default function Portfolio() {
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 mb-4 flex-1">{project.desc}</p>
                   <span className="text-xs font-bold text-[#2180cc] flex items-center gap-1">
-                    View architecture <ExternalLink size={12} />
+                    View project <ExternalLink size={12} />
                   </span>
                 </div>
               </motion.div>
@@ -164,7 +223,11 @@ export default function Portfolio() {
                 className="relative w-full max-w-3xl glass-card !rounded-3xl shadow-2xl overflow-y-auto max-h-[92vh] z-10 text-left !bg-white/95"
               >
                 <div className="relative aspect-video w-full border-b border-[#166804]/10 bg-slate-950 overflow-hidden">
-                  <ProjectVisual category={selectedProject.category} />
+                  <ProjectVisual
+                    image={selectedProject.image}
+                    category={selectedProject.category}
+                    title={selectedProject.title}
+                  />
                   <button
                     type="button"
                     onClick={() => setSelectedProject(null)}
@@ -206,16 +269,28 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  <div className="border-t border-[#166804]/10 pt-6 flex flex-wrap gap-2 items-center">
-                    <span className="text-xs font-semibold text-slate-500 mr-1">Core Tech:</span>
-                    {selectedProject.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs font-semibold px-3 py-1 rounded-full bg-[#e8f5e6] text-[#166804] border border-[#166804]/12"
+                  <div className="border-t border-[#166804]/10 pt-6 flex flex-wrap gap-3 items-center justify-between">
+                    <div className="flex flex-wrap gap-2 items-center">
+                      <span className="text-xs font-semibold text-slate-500 mr-1">Core Tech:</span>
+                      {selectedProject.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="text-xs font-semibold px-3 py-1 rounded-full bg-[#e8f5e6] text-[#166804] border border-[#166804]/12"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    {selectedProject.url && (
+                      <a
+                        href={selectedProject.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-primary !px-4 !py-2 text-xs inline-flex items-center gap-1.5 shrink-0"
                       >
-                        {t}
-                      </span>
-                    ))}
+                        Visit Live Site <ExternalLink size={14} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

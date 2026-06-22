@@ -31,9 +31,12 @@ const NAV_LINKS = [
 ];
 
 const PROJECTS = [
-  'Forex Exchange System',
-  'Shop Inventory ERP',
-  'Pharmacy Management',
+  'Dr. Moti Ortho',
+  'Kan Seenaa Closet',
+  'Womove Active',
+  'Meri Didha Events',
+  'Yeroon Travel',
+  'Lidya Lifestyle',
 ];
 
 const SOCIALS = [
