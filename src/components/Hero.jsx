@@ -16,15 +16,15 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="home" className="hero-section relative overflow-hidden min-h-screen bg-white lg:bg-transparent">
-      {/* Subtle bg — mobile only (avoids duplicating the hero visual on larger screens) */}
-      <div className="hero-bg pointer-events-none md:hidden" aria-hidden="true" />
+    <section id="home" className="hero-section relative overflow-hidden min-h-screen bg-white">
+      <div className="hero-bg pointer-events-none" aria-hidden="true" />
+      <div className="hero-bg-overlay pointer-events-none hidden lg:block" aria-hidden="true" />
 
       <div className="section-inner relative z-10 w-full">
-        <div className="hero-layout min-h-[calc(100vh-4.5rem)] py-10 sm:py-14 lg:py-16">
-          {/* Mobile — logo first */}
+        <div className="hero-layout min-h-[calc(100vh-4.5rem)] py-10 sm:py-12 lg:py-14">
+          {/* Mobile only — logo above content (<768px) */}
           <motion.div
-            className="hero-logo-mobile md:hidden"
+            className="hero-logo-mobile"
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
@@ -32,7 +32,7 @@ export default function Hero() {
             <img src="/images/asana.png" alt="Asana Systems" className="hero-logo-mobile-img" />
           </motion.div>
 
-          {/* Text content */}
+          {/* Text content — logo is in the PC background image on the right */}
           <motion.div
             className="hero-content"
             initial={{ opacity: 0, y: 32 }}
@@ -49,7 +49,7 @@ export default function Hero() {
               Addis Ababa · Ethiopia
             </motion.span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight mb-4 sm:mb-5 font-display">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight mb-4 sm:mb-5 font-display">
               Software Built to{' '}
               <span className="gradient-text text-glow-brand">Scale</span>{' '}
               Your Business
@@ -95,11 +95,15 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Desktop — logo + platform (grid column, single instance) */}
-        
-
-          {/* Tablet — logo + platform below content */}
-        
+          {/* Tablet — visual below content (no duplicate on PC) */}
+          <motion.div
+            className="hero-logo-tablet-wrap hidden md:flex lg:hidden"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <img src={heroVisual} alt="" aria-hidden="true" className="hero-logo hero-logo--tablet pointer-events-none select-none" />
+          </motion.div>
         </div>
       </div>
     </section>

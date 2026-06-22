@@ -34,43 +34,6 @@
   @apply min-h-screen text-slate-800 bg-white relative;
 }
 
-@media (min-width: 1024px) {
-  .page-shell::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background-image: url('./assets/asanahero.png');
-    background-position: right center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.14;
-    pointer-events: none;
-  }
-
-  .page-shell::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background: linear-gradient(
-      100deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(255, 255, 255, 0.9) 38%,
-      rgba(255, 255, 255, 0.65) 58%,
-      rgba(255, 255, 255, 0.2) 78%,
-      transparent 100%
-    );
-    pointer-events: none;
-  }
-
-  .page-shell > main,
-  .page-shell > footer {
-    position: relative;
-    z-index: 1;
-  }
-}
-
 /* Legacy alias */
 .bg-site-light {
   background: transparent;
@@ -1060,26 +1023,24 @@
   animation-play-state: paused;
 }
 
-/* ─── Hero — layered bg + floating visual ─── */
+/* ─── Hero — home background on PC ─── */
 .hero-section {
   background-color: #ffffff;
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    background-color: transparent;
-  }
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   background-image: url('./assets/asanahero.png');
-  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.15;
   pointer-events: none;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .hero-layout {
@@ -1093,37 +1054,44 @@
   max-width: 42rem;
 }
 
-/* Desktop — logo + platform in grid column */
-.hero-logo-desktop-wrap {
-  display: none;
-}
-
-.hero-logo--desktop {
-  width: min(500px, 100%);
-  height: auto;
-  object-fit: contain;
-}
-
 @media (min-width: 1024px) {
+  .hero-section {
+    background-color: transparent;
+  }
+
+  .hero-bg {
+    opacity: 1;
+    background-size: 82% auto;
+    background-position: 100% center;
+  }
+
+  .hero-bg-overlay {
+    background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(255, 255, 255, 0.92) 32%,
+      rgba(255, 255, 255, 0.72) 48%,
+      rgba(255, 255, 255, 0.25) 62%,
+      transparent 78%
+    );
+  }
+
   .hero-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 3rem;
+    display: block;
   }
 
   .hero-content {
-    grid-column: 1;
     max-width: 36rem;
-  }
-
-  .hero-logo-desktop-wrap {
-    grid-column: 2;
-    display: flex;
   }
 }
 
-/* Tablet — stacked, visual below content */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-bg {
+    display: none;
+  }
+}
+
+/* Tablet — stacked visual below content */
 .hero-logo-tablet-wrap {
   justify-content: center;
   margin-top: 2rem;
@@ -1131,21 +1099,14 @@
 }
 
 .hero-logo--tablet {
-  position: relative;
-  width: min(350px, 75vw);
+  width: min(320px, 68vw);
   height: auto;
-  right: auto;
-  bottom: auto;
-  opacity: 1;
   object-fit: contain;
 }
 
-/* Mobile — centered logo, then content */
+/* Mobile only — centered logo (<768px) */
 .hero-logo-mobile {
-  display: flex;
-  justify-content: center;
-  padding-top: 0.5rem;
-  padding-bottom: 1.25rem;
+  display: none;
 }
 
 .hero-logo-mobile-img {
@@ -1155,9 +1116,17 @@
 }
 
 @media (max-width: 767px) {
+  .hero-logo-mobile {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
+  }
+
   .hero-bg {
-    background-position: right center;
     opacity: 0.1;
+    background-size: 88% auto;
+    background-position: right bottom;
   }
 
   .hero-content {
