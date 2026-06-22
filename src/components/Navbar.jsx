@@ -135,7 +135,7 @@ export default function Navbar() {
               transition={{ duration: 0.25, ease: 'easeOut' }}
               className="fixed top-[4.5rem] left-4 right-4 z-50 md:hidden nav-mobile-panel rounded-2xl overflow-hidden"
             >
-              <div className="mobile-nav-grid p-2">
+              <div className="flex flex-col p-2">
                 {links.map((l) => (
                   <button
                     key={l.id}
@@ -146,6 +146,13 @@ export default function Navbar() {
                     {l.label}
                   </button>
                 ))}
+                <button
+                  type="button"
+                  onClick={() => goTo('contact')}
+                  className="btn-primary !w-full !rounded-xl !py-3.5 !text-sm mt-2 mx-1"
+                >
+                  Get Started
+                </button>
               </div>
             </motion.nav>
           </>
