@@ -10,20 +10,22 @@ const links = [
   { id: 'contact', label: 'Contact' },
 ];
 
+const NAV_HEIGHT = 72;
+
 function scrollTo(id) {
   const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 88, behavior: 'smooth' });
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT, behavior: 'smooth' });
 }
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -35,7 +37,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
-      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
@@ -53,60 +55,66 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'px-0 pt-0' : 'px-4 sm:px-6 pt-4'
-        }`}
+      <motion.header
+        className="nav-stuck"
+        animate={{
+          boxShadow: scrolled
+            ? '0 4px 24px -6px rgba(22, 104, 4, 0.16)'
+            : '0 4px 24px -6px rgba(22, 104, 4, 0.12)',
+        }}
+        transition={{ duration: 0.3 }}
       >
-        <div
-          className={`mx-auto max-w-6xl flex items-center justify-between h-[4.25rem] px-4 sm:px-6 transition-all duration-300 ${
-            scrolled ? 'nav-bar-solid rounded-none border-x-0' : 'nav-bar-float rounded-2xl'
-          }`}
+        <motion.div
+          className="nav-stuck-inner mx-auto max-w-6xl flex items-center justify-between px-4 sm:px-6"
+          animate={{ height: scrolled ? '4rem' : '4.5rem' }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Brand */}
           <button type="button" onClick={() => goTo('home')} className="nav-brand group">
-           <img
+            <img
               src="/images/asana.png"
               alt="Asana Systems"
-              className="w-24 h-28 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+              className="h-10 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
             />
-            {/* <span className="font-display font-extrabold uppercase leading-tight text-left">
-              <span className="md:hidden block text-[1.05rem] tracking-wide text-slate-900">ASANA</span>
-              <span className="hidden md:block">
-                <span className="block text-[1.05rem] tracking-wide text-slate-900">ASANA</span>
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#166804]">SYSTEMS</span>
-              </span>
-            </span> */}
+            <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left ml-1">
+              <span className="block text-sm tracking-wide text-slate-900">ASANA</span>
+              <span className="block text-[9px] font-bold tracking-[0.25em] text-[#166804]">SYSTEMS</span>
+            </span>
           </button>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center  gap-1 nav-links-pill">
-            {links.map((l) => (
-              <button
-                key={l.id}
-                type="button"
-                onClick={() => goTo(l.id)}
-                className={`nav-link-pill ${active === l.id ? 'nav-link-pill-active' : ''}`}
-              >
-                {l.label}
-              </button>
-            ))}
+          <div className="hidden md:flex items-center gap-3">
+            <div className="flex items-center gap-1 nav-links-pill">
+              {links.map((l) => (
+                <button
+                  key={l.id}
+                  type="button"
+                  onClick={() => goTo(l.id)}
+                  className={`nav-link-pill ${active === l.id ? 'nav-link-pill-active' : ''}`}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => goTo('contact')}
+              className="btn-primary !px-5 !py-2.5 !text-xs !rounded-full ml-1"
+            >
+              Get Started
+            </button>
           </div>
 
-          {/* Mobile toggle */}
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="md:hidden nav-menu-toggle"
+            className="md:hidden nav-menu-toggle flex"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
-        </div>
-      </header>
+        </motion.div>
+      </motion.header>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <>
@@ -125,9 +133,9 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed top-[5.5rem] left-4 right-4 z-50 md:hidden nav-mobile-panel rounded-2xl overflow-hidden"
+              className="fixed top-[4.5rem] left-4 right-4 z-50 md:hidden nav-mobile-panel rounded-2xl overflow-hidden"
             >
-              <div className="flex flex-col p-2">
+              <div className="mobile-nav-grid p-2">
                 {links.map((l) => (
                   <button
                     key={l.id}

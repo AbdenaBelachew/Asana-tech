@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, X } from 'lucide-react';
+import { ExternalLink, X, TrendingUp, Package, HeartPulse } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const categories = [
   { id: 'all', label: 'All Projects' },
@@ -9,41 +10,57 @@ const categories = [
   { id: 'medical', label: 'Healthcare' },
 ];
 
+const projectMeta = {
+  finance: { icon: TrendingUp, gradient: 'from-emerald-600/80 to-teal-900/90' },
+  retail: { icon: Package, gradient: 'from-blue-600/80 to-indigo-900/90' },
+  medical: { icon: HeartPulse, gradient: 'from-rose-600/80 to-purple-900/90' },
+};
+
 const projects = [
   {
     id: 1,
-    image: '/images/project1.png',
     title: 'Forex Exchange Office System',
     category: 'finance',
-    desc: 'A comprehensive legal management platform for forex offices with real-time rate integrations, multi-currency transaction ledgers, cashier terminal controls, and automated bank reconciliations.',
+    desc: 'Real-time rate integrations, multi-currency ledgers, cashier terminals, and automated bank reconciliations for forex offices.',
     tech: ['React.js', 'PostgreSQL', 'FastAPI', 'WebSockets'],
     metrics: { latency: '35ms', uptime: '99.99%', volume: '$2.5M/day' },
-    challenges: 'Synchronizing volatile currency exchange rates across multiple branches with sub-second latency while keeping absolute ledger transaction atomicity.',
-    solutions: 'Configured an event-driven WebSocket pipeline backed by Redis memory stores, and leveraged database isolation transactions to prevent double-spending anomalies.',
+    challenges: 'Synchronizing volatile exchange rates across multiple branches with sub-second latency while maintaining ledger atomicity.',
+    solutions: 'Event-driven WebSocket pipeline backed by Redis, with database isolation transactions to prevent double-spending.',
   },
   {
     id: 2,
-    image: '/images/project2.png',
     title: 'Shop Inventory Management System',
     category: 'retail',
-    desc: 'A secure cloud ERP solution tracking stock levels, purchase ledger orders, and vendor disbursements across multiple warehouse locations. Features active barcode scanning and automated low-stock warnings.',
+    desc: 'Cloud ERP tracking stock, purchase orders, and vendor payments across warehouses with barcode scanning and low-stock alerts.',
     tech: ['Next.js', 'GraphQL', 'AWS Lambdas', 'Node.js'],
     metrics: { latency: '48ms', uptime: '99.95%', volume: '18k orders/day' },
-    challenges: 'Real-time stock level synchronization across 15 high-volume brick-and-mortar storefronts experiencing massive concurrency spikes.',
-    solutions: 'Built an optimistic client-side UI sync mechanism and leveraged DynamoDB global databases with strong read consistencies to secure precise stock records.',
+    challenges: 'Real-time stock sync across 15 high-volume storefronts with massive concurrency spikes.',
+    solutions: 'Optimistic client-side UI sync with DynamoDB global tables and strong read consistency for precise stock records.',
   },
   {
     id: 3,
-    image: '/images/project3.png',
     title: 'Pharmacy Management System',
     category: 'medical',
-    desc: 'A clinical pharmacy platform providing prescription dispensing, automated drug interaction checks, batch expiry notifications, and insurance claim approvals.',
-    tech: ['React', 'Supabase', 'Python Core', 'TailwindCSS'],
+    desc: 'Prescription dispensing, drug interaction checks, batch expiry notifications, and insurance claim approvals.',
+    tech: ['React', 'Supabase', 'Python', 'TailwindCSS'],
     metrics: { latency: '40ms', uptime: '99.99%', volume: '8.4k patients/day' },
-    challenges: 'Cross-referencing prescription orders against drug interaction libraries in real-time without introducing processing delays.',
-    solutions: 'Pre-indexed drug libraries inside in-memory PostgreSQL search stores, enabling rapid lexical search matching under 15ms.',
+    challenges: 'Cross-referencing prescriptions against drug interaction libraries in real-time without processing delays.',
+    solutions: 'Pre-indexed drug libraries in PostgreSQL full-text search stores, enabling lexical matching under 15ms.',
   },
 ];
+
+function ProjectVisual({ category }) {
+  const { icon: Icon, gradient } = projectMeta[category] ?? projectMeta.finance;
+  return (
+    <div className={`relative w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-4 left-4 w-24 h-24 rounded-full bg-white/20 blur-2xl" />
+        <div className="absolute bottom-4 right-4 w-32 h-32 rounded-full bg-white/10 blur-3xl" />
+      </div>
+      <Icon size={48} className="text-white/90 relative z-10" strokeWidth={1.5} />
+    </div>
+  );
+}
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('all');
@@ -54,51 +71,49 @@ export default function Portfolio() {
   return (
     <section id="projects" className="section-shell">
       <div className="section-inner">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-12">
           <span className="section-badge">Case Studies</span>
           <h2 className="section-title">Featured Client Deliveries</h2>
           <p className="section-desc">
-            Explore some of the high-performance enterprise systems we&apos;ve shipped to production.
+            High-performance enterprise systems we&apos;ve shipped to production across Ethiopia.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="flex flex-wrap gap-2 justify-center mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => setFilter(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                filter === cat.id
-                  ? 'btn-primary !px-5 !py-2.5 shadow-md'
-                  : 'btn-secondary !px-5 !py-2.5 !text-slate-600'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
+        <ScrollReveal delay={0.1}>
+          <div className="filter-grid mb-10 sm:mb-12">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setFilter(cat.id)}
+                className={`px-4 py-2.5 sm:px-5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer text-center ${
+                  filter === cat.id
+                    ? 'btn-primary !px-4 sm:!px-5 !py-2.5 shadow-md'
+                    : 'btn-secondary !px-4 sm:!px-5 !py-2.5 !text-slate-600'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="portfolio-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, i) => (
+              <ScrollReveal key={project.id} delay={i * 0.08} className="h-full">
               <motion.div
                 layout
-                key={project.id}
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
                 whileHover={{ y: -6 }}
                 onClick={() => setSelectedProject(project)}
-                className="group glass-card overflow-hidden cursor-pointer flex flex-col !p-0 hover:-translate-y-1"
+                className="group glass-card keep-glass-mobile overflow-hidden cursor-pointer flex flex-col !p-0 hover:-translate-y-1 h-full"
               >
                 <div className="relative overflow-hidden aspect-video border-b border-[#166804]/8 bg-slate-900">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
+                  <ProjectVisual category={project.category} />
                   <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="px-4 py-2 rounded-full text-xs font-bold bg-white text-[#166804] shadow-lg flex items-center gap-1.5">
                       View Details <ExternalLink size={12} />
@@ -108,9 +123,9 @@ export default function Portfolio() {
 
                 <div className="p-6 text-left flex-1 flex flex-col">
                   <div className="flex flex-wrap gap-1.5 mb-3">
-                    {project.tech.slice(0, 3).map((t, idx) => (
+                    {project.tech.slice(0, 3).map((t) => (
                       <span
-                        key={idx}
+                        key={t}
                         className="text-[9px] font-bold px-2.5 py-0.5 rounded-full bg-[#e8f5e6] text-[#166804] border border-[#166804]/15"
                       >
                         {t}
@@ -126,6 +141,7 @@ export default function Portfolio() {
                   </span>
                 </div>
               </motion.div>
+              </ScrollReveal>
             ))}
           </AnimatePresence>
         </div>
@@ -147,8 +163,8 @@ export default function Portfolio() {
                 transition={{ type: 'spring', damping: 26, stiffness: 320 }}
                 className="relative w-full max-w-3xl glass-card !rounded-3xl shadow-2xl overflow-y-auto max-h-[92vh] z-10 text-left !bg-white/95"
               >
-                <div className="relative aspect-video w-full border-b border-[#166804]/10 bg-slate-950">
-                  <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover object-top" />
+                <div className="relative aspect-video w-full border-b border-[#166804]/10 bg-slate-950 overflow-hidden">
+                  <ProjectVisual category={selectedProject.category} />
                   <button
                     type="button"
                     onClick={() => setSelectedProject(null)}
@@ -192,9 +208,9 @@ export default function Portfolio() {
 
                   <div className="border-t border-[#166804]/10 pt-6 flex flex-wrap gap-2 items-center">
                     <span className="text-xs font-semibold text-slate-500 mr-1">Core Tech:</span>
-                    {selectedProject.tech.map((t, idx) => (
+                    {selectedProject.tech.map((t) => (
                       <span
-                        key={idx}
+                        key={t}
                         className="text-xs font-semibold px-3 py-1 rounded-full bg-[#e8f5e6] text-[#166804] border border-[#166804]/12"
                       >
                         {t}

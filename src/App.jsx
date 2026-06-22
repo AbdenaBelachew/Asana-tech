@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TechMarquee from './components/TechMarquee';
 import Services from './components/Services';
+import Process from './components/Process';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
+import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { MessageSquare, ArrowUp } from 'lucide-react';
@@ -26,7 +30,7 @@ export default function App() {
   const handleScrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      const offset = 80;
+      const offset = 72;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = el.getBoundingClientRect().top;
       window.scrollTo({
@@ -37,20 +41,18 @@ export default function App() {
   };
 
   return (
-    <div className="page-shell page-noise">
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute inset-0 grid-bg-overlay-light opacity-40" />
-        <div className="orb-1 absolute top-[-8%] right-[-4%] w-[520px] h-[520px] rounded-full bg-[#166804]/12 blur-[110px]" />
-        <div className="orb-2 absolute bottom-[10%] left-[-8%] w-[480px] h-[480px] rounded-full bg-[#2180cc]/10 blur-[100px]" />
-      </div>
-
+    <div className="page-shell">
       <Navbar />
 
-      <main className="relative z-10">
+      <main className="relative z-10 pt-[4.5rem]">
         <Hero />
+   
         <Services />
+        <Process />
         <About />
         <Portfolio />
+        <Testimonials />
+        <CTA />
         <Contact />
       </main>
 
