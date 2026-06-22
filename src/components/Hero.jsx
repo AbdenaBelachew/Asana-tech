@@ -56,7 +56,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-7 sm:mb-8 max-w-xl">
-              Asana Systems crafts fast websites, mobile apps, and custom ERP software — engineered for Ethiopian businesses ready to grow.
+              Asana Systems crafts fast websites, mobile apps, and custom ERP software engineered for Ethiopian businesses ready to grow.
             </p>
 
             <div className="grid grid-cols-2 gap-3 w-full sm:w-auto mb-7 sm:mb-8">
