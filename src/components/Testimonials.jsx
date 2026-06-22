@@ -6,14 +6,14 @@ const testimonials = [
   {
     name: 'Daniel T.',
     role: 'Forex Office Owner',
-    text: 'Asana Systems built our exchange platform from scratch. Real-time rates, multi-branch support — everything works flawlessly. They understood our business from day one.',
+    text: 'Asana Systems built our exchange platform from scratch. Real-time rates, multi-branch support everything works flawlessly. They understood our business from day one.',
     rating: 5,
     featured: true,
   },
   {
     name: 'Hanna M.',
     role: 'Retail Shop Manager',
-    text: 'Our inventory system eliminated stock discrepancies completely. Barcode scanning, low-stock alerts, and a clean dashboard — exactly what we needed.',
+    text: 'Our inventory system eliminated stock discrepancies completely. Barcode scanning, low-stock alerts, and a clean dashboard exactly what we needed.',
     rating: 5,
   },
   {

@@ -24,7 +24,7 @@ export default function About() {
           <span className="section-badge">Who We Are</span>
           <h2 className="section-title">Built in Addis Ababa, Built for Scale</h2>
           <p className="section-desc">
-            A team of engineers and designers passionate about building software that solves real business challenges — beautifully and securely.
+            A team of engineers and designers passionate about building software that solves real business challenges beautifully and securely.
           </p>
         </ScrollReveal>
 
@@ -53,9 +53,9 @@ export default function About() {
               Our Journey & Vision
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Asana Systems</span> started with a simple belief: high-performance software should be accessible to every growing business — not just multinational enterprises.
+              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Asana Systems</span> started with a simple belief: high-performance software should be accessible to every growing business not just multinational enterprises.
               <span className="block mt-3 font-bold text-[#2180cc]">
-                &ldquo;Asana&rdquo; means close to me in Afaan Oromo — and that&apos;s how we work with every client.
+                &ldquo;Asana&rdquo; means close to me in Afaan Oromo and that&apos;s how we work with every client.
               </span>
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
