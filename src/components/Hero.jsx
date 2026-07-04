@@ -29,7 +29,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src="/images/logo.png" alt="Yuba Systems" className="w-28 h-28 sm:w-28 sm:h-28 object-contain" />
+            <img src="/images/logo.png" alt="Yuba Systems" className="w-28 h-28 sm:w-28 sm:h-28 object-contain scale-150 sm:scale-100" />
           </motion.div>
 
           {/* Text content — logo is in the PC background image on the right */}
