@@ -21,10 +21,10 @@ export default function Hero() {
       <div className="hero-bg-overlay pointer-events-none hidden lg:block" aria-hidden="true" />
 
       <div className="section-inner relative z-10 w-full h-full">
-        <div className="hero-layout flex flex-col justify-center min-h-[calc(100dvh-4.5rem)] py-8 sm:py-12 lg:py-14">
+        <div className="hero-layout flex flex-col justify-center min-h-[calc(100dvh-4.5rem)]  sm:py-12 lg:py-14">
           {/* Mobile only — logo above content (<768px) */}
           <motion.div
-            className="hero-logo-mobile mb-4 sm:mb-8 flex justify-center md:hidden"
+            className="hero-logo-mobile mb-2 sm:mb-8 flex justify-center md:hidden"
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
