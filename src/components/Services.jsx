@@ -1,43 +1,64 @@
 import React from 'react';
-import { Laptop, Smartphone, Package, QrCode, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Laptop, Smartphone, Cloud, Brain, Shield, Code2, Database, Zap, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const services = [
   {
-    icon: Laptop,
-    title: 'Websites & E-Commerce',
-    desc: 'Corporate websites and online stores built to convert visitors, rank on search, and grow your brand.',
+    icon: Code2,
+    title: 'Custom Software Development',
+    desc: 'Tailored solutions built from the ground up to match your exact business processes and workflows.',
     accent: false,
     featured: true,
     area: 'featured',
   },
   {
+    icon: Laptop,
+    title: 'Web Application Development',
+    desc: 'Secure, scalable web platforms with modern UI/UX that deliver exceptional user experiences.',
+    accent: false,
+    area: 'web',
+  },
+  {
     icon: Smartphone,
     title: 'Mobile App Development',
-    desc: 'Native-feel iOS and Android apps with offline support, push notifications, and polished dashboards.',
+    desc: 'Native iOS and Android apps with offline support, push notifications, and seamless performance.',
     accent: true,
     area: 'mobile',
   },
   {
-    icon: Package,
-    title: 'Inventory & Warehouse ERP',
-    desc: 'Real-time stock tracking, barcode scanning, and supply chain controls that eliminate shrinkage.',
+    icon: Brain,
+    title: 'AI Solutions',
+    desc: 'Intelligent automation, machine learning models, and AI-powered features that transform operations.',
+    accent: true,
+    area: 'ai',
+  },
+  {
+    icon: Cloud,
+    title: 'Cloud Services',
+    desc: 'Cloud architecture, migration, and DevOps with industry-leading security and 99.9% uptime.',
     accent: false,
-    area: 'inventory',
+    area: 'cloud',
   },
   {
-    icon: QrCode,
-    title: 'Restaurant QR Menus',
-    desc: 'Contactless digital menus with instant price updates, ordering dashboards, and vendor analytics.',
-    accent: true,
-    area: 'qr',
+    icon: Database,
+    title: 'Enterprise ERP Systems',
+    desc: 'Comprehensive business management with inventory, finance, HR, and reporting modules.',
+    accent: false,
+    area: 'erp',
   },
   {
-    icon: ShieldCheck,
-    title: 'Shop & Clinic Software',
-    desc: 'Billing, inventory, and scheduling systems tailored for pharmacies, clinics, and retail shops.',
+    icon: Shield,
+    title: 'Cybersecurity',
+    desc: 'Enterprise-grade security audits, penetration testing, and secure infrastructure design.',
     accent: true,
-    area: 'shop',
+    area: 'security',
+  },
+  {
+    icon: Zap,
+    title: 'Digital Transformation',
+    desc: 'Strategic consulting to modernize legacy systems and accelerate your digital evolution.',
+    accent: false,
+    area: 'consulting',
   },
 ];
 
@@ -53,14 +74,14 @@ export default function Services() {
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 lg:mb-16">
           <span className="section-badge">What We Offer</span>
           <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
-            High-Performance Digital Solutions
+            Comprehensive Technology Solutions
           </h2>
           <p className="section-desc text-sm sm:text-base">
-            We don&apos;t just write code — we build software that drives sales, saves time, and scales your business.
+            From AI-powered innovation to enterprise systems — we deliver secure, scalable software guided by wisdom and excellence.
           </p>
         </ScrollReveal>
 
-        <div className="services-bento grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <div className="services-bento grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {services.map((s, i) => {
             const Icon = s.icon;
             const isFeatured = s.featured;

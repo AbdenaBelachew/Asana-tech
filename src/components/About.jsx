@@ -10,10 +10,10 @@ const stats = [
 ];
 
 const values = [
-  { icon: Shield, title: 'Security First', desc: 'Enterprise-grade encryption, secure auth, and isolated databases on every project.' },
-  { icon: Zap, title: 'Speed & Uptime', desc: 'Blazing-fast load times, optimistic UI updates, and production-grade reliability.' },
-  { icon: Heart, title: 'Client Obsession', desc: 'Transparent milestones, regular updates, and accountability you can count on.' },
-  { icon: Code2, title: 'Clean Architecture', desc: 'Maintainable codebases that scale seamlessly as your team and product grow.' },
+  { icon: Shield, title: 'Wisdom & Trust', desc: 'Built on principles of trusted leadership from Africa\'s oldest democratic systems.' },
+  { icon: Zap, title: 'Innovation', desc: 'Cutting-edge AI, cloud solutions, and modern architecture that scales with your growth.' },
+  { icon: Heart, title: 'Customer Success', desc: 'Transparent collaboration, regular updates, and long-term partnerships you can rely on.' },
+  { icon: Code2, title: 'Excellence', desc: 'World-class engineering standards with secure, maintainable code built to last.' },
 ];
 
 export default function About() {
@@ -22,9 +22,9 @@ export default function About() {
       <div className="section-inner">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span className="section-badge">Who We Are</span>
-          <h2 className="section-title">Built in Addis Ababa, Built for Scale</h2>
+          <h2 className="section-title">Ancient Wisdom Meets Modern Technology</h2>
           <p className="section-desc">
-            A team of engineers and designers passionate about building software that solves real business challenges beautifully and securely.
+            Rooted in Ethiopia's rich heritage, powered by cutting-edge innovation. We build software that empowers businesses and communities with trusted leadership and excellence.
           </p>
         </ScrollReveal>
 
@@ -50,19 +50,16 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <ScrollReveal className="lg:col-span-5 text-left" direction="right">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 mb-4 sm:mb-5 tracking-tight font-display">
-              Our Journey & Vision
+              The Yuba Story
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Asana Systems</span> started with a simple belief: high-performance software should be accessible to every growing business not just multinational enterprises.
-              <span className="block mt-3 font-bold text-[#2180cc]">
-                &ldquo;Asana&rdquo; means close to me in Afaan Oromo and that&apos;s how we work with every client.
-              </span>
+              The name <span className="font-bold text-[#166804]">"Yuba"</span> originates from the historic Oromo Gadaa System one of Africa's oldest indigenous democratic governance structures. Within Gadaa, Yuba represents a respected stage of <span className="font-semibold">wisdom, advisory leadership, mentorship, and governance</span>.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              From our first digital product to scaling systems across Ethiopia, we&apos;ve grown by putting engineering standards and customer trust first.
+              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Yuba Systems</span> embodies these principles by bringing trusted, intelligent solutions to every project. We believe technology should be guided by knowledge, ethics, and long-term thinking not just trends.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Today, we deliver end-to-end consulting, web engineering, mobile apps, and reliable long-term support.
+              Today, we serve businesses, governments, NGOs, and communities across Ethiopia and beyond with custom software, mobile apps, AI solutions, cloud services, and digital transformation consulting.
             </p>
           </ScrollReveal>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, TrendingUp, Clock, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-import heroVisual from '../assets/asanahero.png';
+import heroVisual from '../assets/yubahero.png';
 
 function scrollTo(id) {
   const el = document.getElementById(id);
@@ -29,7 +29,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src="/images/asana.png" alt="Asana Systems" className="hero-logo-mobile-img" />
+            <img src="/images/logo.png" alt="Yuba.et" className="hero-logo-mobile-img" />
           </motion.div>
 
           {/* Text content — logo is in the PC background image on the right */}
@@ -50,13 +50,12 @@ export default function Hero() {
             </motion.span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-[3rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight mb-4 sm:mb-5 font-display">
-              Software Built to{' '}
-              <span className="gradient-text text-glow-brand">Scale</span>{' '}
-              Your Business
+              <span className="gradient-text text-glow-brand">Wisdom-Driven</span>{' '}
+              Innovation for the Digital Age
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-7 sm:mb-8 max-w-xl">
-              Asana Systems crafts fast websites, mobile apps, and custom ERP software engineered for Ethiopian businesses ready to grow.
+              Yuba Systems combines Ethiopia's rich cultural heritage with cutting-edge technology to deliver secure, scalable software solutions for businesses, governments, and communities.
             </p>
 
             <div className="grid grid-cols-2 gap-3 w-full sm:w-auto mb-7 sm:mb-8">

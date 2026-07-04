@@ -31,16 +31,37 @@ export default function Navbar() {
 
   useEffect(() => {
     const sections = links.map((l) => document.getElementById(l.id)).filter(Boolean);
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
         });
       },
-      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      { rootMargin: '-20% 0px -50% 0px', threshold: [0, 0.1, 0.5] }
     );
+    
     sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+    
+    // Additional check for bottom of page (for contact section)
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+      
+      // If we're within 200px of the bottom, activate contact
+      if (pageHeight - scrollPosition < 200) {
+        setActive('contact');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -71,13 +92,13 @@ export default function Navbar() {
         >
           <button type="button" onClick={() => goTo('home')} className="nav-brand group">
             <img
-              src="/images/asana.png"
-              alt="Asana Systems"
-              className="h-10 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+              src="/images/logo.png"
+              alt="Yuba Systems"
+              className="h-16 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-100"
             />
-            <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left ml-1">
-              <span className="block text-sm tracking-wide text-slate-900">ASANA</span>
-              <span className="block text-[9px] font-bold tracking-[0.25em] text-[#166804]">SYSTEMS</span>
+            <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left">
+              <span className="block text-sm tracking-wide text-slate-900">YUBA</span>
+              <span className="block text-[9px] font-bold tracking-[0.25em] text-[#166804]">Systems</span>
             </span>
           </button>
 

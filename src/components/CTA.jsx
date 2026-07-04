@@ -23,10 +23,10 @@ export default function CTA() {
                 Let&apos;s Build Together
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 font-display tracking-tight">
-                Ready to Transform Your Business?
+                Ready to Transform with Wisdom-Driven Innovation?
               </h2>
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
-                Whether you need a website, mobile app, or full ERP system — we&apos;ll deliver software that scales with you.
+                From custom software and AI solutions to mobile apps and digital transformation — we deliver secure, scalable technology guided by experience and excellence.
               </p>
 
               <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto sm:max-w-none sm:flex sm:flex-row sm:justify-center">

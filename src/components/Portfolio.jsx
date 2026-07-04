@@ -17,6 +17,7 @@ import kansenaImg from '../assets/kansena.png';
 import womoveImg from '../assets/womove.png';
 import yeroonImg from '../assets/yeroon.png';
 import liduImg from '../assets/lidu.png';
+import zinashImg from '../assets/zinash.png';
 
 const categories = [
   { id: 'all', label: 'All Projects' },
@@ -70,10 +71,11 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Meri Didha Events',
+    title: 'Zinash Olani Promotion & Events',
     category: 'events',
-    url: 'https://merididha.netlify.app/',
-    desc: 'Event promotion platform for Meri Didha Promotion & Events — upcoming events, promotions, podcast, team, and contact in Addis Ababa.',
+    url: '#',
+    image: zinashImg,
+    desc: 'Event promotion platform for Zinash olani Promotion & Events — upcoming events, promotions, podcast, team, and contact in Addis Ababa.',
     tech: ['React', 'TailwindCSS', 'Netlify'],
   },
   {

@@ -1,162 +1,365 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Clock, Globe, MessageSquare } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'Abdiol4322@gmail.com', href: 'mailto:Abdiol4322@gmail.com' },
-  { icon: Phone, label: 'Phone', value: '+251 966 780 537', href: 'tel:+251966780537', accent: true },
-  { icon: MapPin, label: 'Location', value: 'Bole, Addis Ababa', href: null },
+  { 
+    icon: Mail, 
+    label: 'Email', 
+    value: 'hello@yuba.et', 
+    display: 'hello@yuba.et',
+    href: 'mailto:hello@yuba.et',
+    description: 'Drop us a line anytime'
+  },
+  { 
+    icon: Phone, 
+    label: 'Phone', 
+    value: '+251 966 780 537', 
+    display: '+251 966 780 537',
+    href: 'tel:+251966780537', 
+    accent: true,
+    description: 'Mon-Fri, 9AM-6PM EAT'
+  },
+  { 
+    icon: MapPin, 
+    label: 'Office', 
+    value: 'Bole, Addis Ababa, Ethiopia', 
+    display: 'Bole, Addis Ababa',
+    href: null,
+    description: 'Visit us in person'
+  },
+];
+
+const quickStats = [
+  { icon: Clock, label: '< 4 Hours', desc: 'Response Time' },
+  { icon: Globe, label: '10+ Projects', desc: 'Successfully Delivered' },
+  { icon: MessageSquare, label: '24/7 Support', desc: 'Always Available' },
 ];
 
 const inputClass =
-  'w-full px-4 py-3 rounded-xl border border-[#166804]/12 text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-[#166804] focus:ring-2 focus:ring-[#166804]/15 transition-all duration-300 bg-white/90';
+  'w-full px-4 py-3.5 rounded-xl border border-slate-200 text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-[#166804] focus:ring-2 focus:ring-[#166804]/10 transition-all duration-300 bg-white hover:border-slate-300';
 
 export default function Contact() {
   const [status, setStatus] = useState('idle');
-  const [form, setForm] = useState({ name: '', email: '', service: 'web', message: '' });
+  const [form, setForm] = useState({ 
+    name: '', 
+    email: '', 
+    phone: '',
+    company: '',
+    service: '', 
+    budget: '',
+    message: '' 
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
     setTimeout(() => {
       setStatus('success');
-      setForm({ name: '', email: '', service: 'web', message: '' });
+      setForm({ 
+        name: '', 
+        email: '', 
+        phone: '',
+        company: '',
+        service: '', 
+        budget: '',
+        message: '' 
+      });
     }, 1500);
   };
 
   return (
     <section id="contact" className="section-shell">
       <div className="section-inner">
-        <ScrollReveal className="text-center max-w-2xl mx-auto mb-14">
-          <span className="section-badge">Contact Us</span>
-          <h2 className="section-title">Ready to Build Something?</h2>
+        <ScrollReveal className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="section-badge">Get In Touch</span>
+          <h2 className="section-title">Let&apos;s Build Something Extraordinary</h2>
           <p className="section-desc">
-            Tell us about your project and we&apos;ll get back to you within 4 business hours.
+            Whether you&apos;re starting from scratch or scaling an existing system, we&apos;re here to help. 
+            Share your vision and we&apos;ll respond within 4 hours with a clear path forward.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-          <ScrollReveal className="lg:col-span-2" direction="right">
-          <div className="contact-info-grid">
-            {contactInfo.map((c) => {
-              const Icon = c.icon;
-              const isLocation = c.label === 'Location';
+        {/* Quick Stats */}
+        <ScrollReveal className="mb-12 sm:mb-16">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto">
+            {quickStats.map((stat, i) => {
+              const Icon = stat.icon;
               return (
                 <div
-                  key={c.label}
-                  className={`glass-card mobile-grid-card !rounded-2xl p-4 sm:p-5 hover:-translate-y-0.5 flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-3 sm:gap-4 ${isLocation ? 'contact-info-wide col-span-2 sm:col-span-1 lg:col-span-2' : ''}`}
+                  key={stat.label}
+                  className="glass-card p-4 sm:p-5 text-center hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className={`icon-box w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 ${c.accent ? 'icon-box-accent' : ''}`}>
-                    <Icon size={18} />
+                  <div className="icon-box w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3">
+                    <Icon size={18} className="sm:w-5 sm:h-5" />
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5">{c.label}</p>
-                    {c.href ? (
-                      <a href={c.href} className="text-xs sm:text-sm font-semibold text-slate-800 hover:text-[#166804] transition-colors duration-300 break-all sm:break-normal">
-                        {c.value}
-                      </a>
-                    ) : (
-                      <p className="text-xs sm:text-sm font-semibold text-slate-800">{c.value}</p>
-                    )}
+                  <div className="text-base sm:text-lg font-extrabold text-slate-900 mb-0.5 sm:mb-1 font-display">
+                    {stat.label}
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 font-semibold">
+                    {stat.desc}
                   </div>
                 </div>
               );
             })}
-
-            <div className="contact-promo contact-info-wide col-span-2 p-4 sm:p-5 rounded-2xl bg-[#e8f5e6]/90 border border-[#166804]/15 flex items-center justify-center text-center">
-              <p className="text-xs sm:text-sm font-semibold text-[#166804] leading-relaxed">
-                Free consultation — no obligation. Just a friendly conversation about your goals.
-              </p>
-            </div>
           </div>
         </ScrollReveal>
 
-          <ScrollReveal className="lg:col-span-3" delay={0.1} direction="left">
-            <div className="contact-form-shell glass-card mobile-grid-card p-8">
-              {status === 'success' ? (
-                <div className="flex flex-col items-center justify-center text-center py-12 gap-4">
-                  <div className="w-16 h-16 rounded-full icon-box">
-                    <CheckCircle2 size={32} className="text-[#166804]" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          {/* Contact Info Sidebar */}
+          <ScrollReveal className="lg:col-span-4" direction="right">
+            <div className="space-y-4">
+              <div className="glass-card p-6 sm:p-7">
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mb-6 font-display">
+                  Contact Information
+                </h3>
+                <div className="space-y-5">
+                  {contactInfo.map((c) => {
+                    const Icon = c.icon;
+                    return (
+                      <div key={c.label} className="group">
+                        <div className="flex items-start gap-4">
+                          <div className={`icon-box w-11 h-11 flex-shrink-0 group-hover:scale-105 transition-transform duration-300 ${c.accent ? 'icon-box-accent' : ''}`}>
+                            <Icon size={18} />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                              {c.label}
+                            </p>
+                            {c.href ? (
+                              <a 
+                                href={c.href} 
+                                className="text-sm font-semibold text-slate-900 hover:text-[#166804] transition-colors duration-300 block mb-1"
+                              >
+                                {c.display}
+                              </a>
+                            ) : (
+                              <p className="text-sm font-semibold text-slate-900 mb-1">
+                                {c.display}
+                              </p>
+                            )}
+                            {c.description && (
+                              <p className="text-xs text-slate-500">
+                                {c.description}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Trust Badge */}
+              <div className="glass-card p-5 sm:p-6 bg-gradient-to-br from-[#e8f5e6]/50 to-emerald-50/50 border border-[#166804]/15">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#166804]/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 size={20} className="text-[#166804]" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">Message Sent!</h3>
-                  <p className="text-slate-600 max-w-sm text-sm leading-relaxed">
-                    Thank you for reaching out. Our team will contact you within 4 business hours.
-                  </p>
-                  <button type="button" onClick={() => setStatus('idle')} className="btn-secondary !px-6 !py-2.5 !text-sm mt-2">
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 mb-1">
+                      Free Consultation
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      No obligation. No pressure. Just a friendly conversation about your project goals and how we can help.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Working Hours */}
+              <div className="glass-card p-5 sm:p-6">
+                <h4 className="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">
+                  Office Hours
+                </h4>
+                <div className="space-y-2 text-xs">
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-600 font-medium">Monday - Friday</span>
+                    <span className="text-slate-900 font-semibold">9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-600 font-medium">Saturday</span>
+                    <span className="text-slate-900 font-semibold">10:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-600 font-medium">Sunday</span>
+                    <span className="text-slate-500 font-semibold">Closed</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 pt-3 border-t border-slate-200">
+                  East Africa Time (EAT) • GMT+3
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Contact Form */}
+          <ScrollReveal className="lg:col-span-8" delay={0.1} direction="left">
+            <div className="glass-card p-6 sm:p-8 lg:p-10">
+              {status === 'success' ? (
+                <div className="flex flex-col items-center justify-center text-center py-16 gap-5">
+                  <div className="w-20 h-20 rounded-full bg-[#166804]/10 flex items-center justify-center">
+                    <CheckCircle2 size={40} className="text-[#166804]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-slate-900 mb-2 font-display">
+                      Thank You for Reaching Out!
+                    </h3>
+                    <p className="text-slate-600 max-w-md text-sm leading-relaxed">
+                      We&apos;ve received your message and will get back to you within 4 business hours. 
+                      In the meantime, feel free to explore our portfolio or check out our latest projects.
+                    </p>
+                  </div>
+                  <button 
+                    type="button" 
+                    onClick={() => setStatus('idle')} 
+                    className="btn-secondary !px-8 !py-3 !text-sm mt-2"
+                  >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label htmlFor="c-name" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Full Name</label>
-                      <input
-                        id="c-name"
-                        type="text"
-                        required
-                        placeholder="Your name"
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className={inputClass}
-                      />
+                <>
+                  <div className="mb-8">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2 font-display">
+                      Send Us a Message
+                    </h3>
+                    <p className="text-sm text-slate-600">
+                      Fill out the form below and we&apos;ll be in touch shortly.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="c-name" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                          Full Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="c-name"
+                          type="text"
+                          required
+                          placeholder="John Doe"
+                          value={form.name}
+                          onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          className={inputClass}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="c-email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                          Email Address <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="c-email"
+                          type="email"
+                          required
+                          placeholder="john@company.com"
+                          value={form.email}
+                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          className={inputClass}
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label htmlFor="c-email" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Email</label>
-                      <input
-                        id="c-email"
-                        type="email"
-                        required
-                        placeholder="you@example.com"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className={inputClass}
-                      />
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="c-phone" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          id="c-phone"
+                          type="tel"
+                          placeholder="+251 912 345 678"
+                          value={form.phone || ''}
+                          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                          className={inputClass}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="c-company" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                          Company / Organization
+                        </label>
+                        <input
+                          id="c-company"
+                          type="text"
+                          placeholder="Your Company Name"
+                          value={form.company || ''}
+                          onChange={(e) => setForm({ ...form, company: e.target.value })}
+                          className={inputClass}
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  <div>
-                    <label htmlFor="c-service" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Service Needed</label>
-                    <select
-                      id="c-service"
-                      value={form.service}
-                      onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className={`${inputClass} cursor-pointer appearance-none`}
-                    >
-                      <option value="web">Website Development</option>
-                      <option value="mobile">Mobile App</option>
-                      <option value="inventory">Inventory System</option>
-                      <option value="qr">Restaurant QR Menu</option>
-                      <option value="consultation">IT Consultation</option>
-                      <option value="shop">Shop / Clinic Software</option>
-                    </select>
-                  </div>
+                    <div>
+                      <label htmlFor="c-service" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Service Interested In <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        id="c-service"
+                        value={form.service}
+                        onChange={(e) => setForm({ ...form, service: e.target.value })}
+                        className={`${inputClass} cursor-pointer`}
+                        required
+                      >
+                        <option value="">Select a service...</option>
+                        <option value="custom">Custom Software Development</option>
+                        <option value="web">Web Application Development</option>
+                        <option value="mobile">Mobile App Development</option>
+                        <option value="ai">AI Solutions</option>
+                        <option value="cloud">Cloud Services & DevOps</option>
+                        <option value="erp">Enterprise ERP System</option>
+                        <option value="api">API Development</option>
+                        <option value="cyber">Cybersecurity</option>
+                        <option value="consultation">Digital Transformation Consulting</option>
+                        <option value="other">Other / Not Sure</option>
+                      </select>
+                    </div>
 
-                  <div>
-                    <label htmlFor="c-message" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Tell Us About Your Project</label>
-                    <textarea
-                      id="c-message"
-                      required
-                      rows={5}
-                      placeholder="Describe what you need and any key requirements..."
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className={`${inputClass} resize-none`}
-                    />
-                  </div>
+              
 
-                  <button type="submit" disabled={status === 'sending'} className="btn-primary !w-full !rounded-xl disabled:opacity-70">
-                    {status === 'sending' ? (
-                      <>
-                        <Loader2 size={16} className="animate-spin" /> Sending…
-                      </>
-                    ) : (
-                      <>
-                        <Send size={15} /> Send Message
-                      </>
-                    )}
-                  </button>
-                </form>
+                    <div>
+                      <label htmlFor="c-message" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                        Project Details <span className="text-red-500">*</span>
+                      </label>
+                      <textarea
+                        id="c-message"
+                        required
+                        rows={3}
+                        placeholder="Tell us about your project goals, key requirements, timeline, and any specific challenges you're facing..."
+                        value={form.message}
+                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                        className={`${inputClass} resize-none`}
+                      />
+                      <p className="text-xs text-slate-500 mt-2">
+                        Minimum 20 characters. Be as detailed as possible to help us understand your needs.
+                      </p>
+                    </div>
+
+                    <div className="pt-4">
+                      <button 
+                        type="submit" 
+                        disabled={status === 'sending'} 
+                        className="btn-primary !w-full !py-4 !rounded-xl disabled:opacity-70 disabled:cursor-not-allowed text-base font-bold shadow-lg hover:shadow-xl"
+                      >
+                        {status === 'sending' ? (
+                          <>
+                            <Loader2 size={18} className="animate-spin" /> 
+                            <span>Sending Your Message...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Send size={18} /> 
+                            <span>Send Message</span>
+                          </>
+                        )}
+                      </button>
+                      <p className="text-xs text-slate-500 text-center mt-3">
+                        By submitting this form, you agree to our privacy policy and terms of service.
+                      </p>
+                    </div>
+                  </form>
+                </>
               )}
             </div>
           </ScrollReveal>
