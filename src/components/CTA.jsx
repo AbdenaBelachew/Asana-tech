@@ -15,7 +15,7 @@ export default function CTA() {
           <div className="cta-banner rounded-[2rem] p-10 sm:p-14 text-center relative overflow-hidden">
             <div className="absolute inset-0 opacity-30 pointer-events-none">
               <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#166804]/30 blur-[80px]" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-[#2180cc]/25 blur-[60px]" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full blur-[60px]" />
             </div>
 
             <div className="relative z-10 max-w-2xl mx-auto">
@@ -35,7 +35,7 @@ export default function CTA() {
                   onClick={() => scrollTo('contact')}
                   className="btn-primary !px-6 !py-3.5 sm:!px-8 sm:!py-4 inline-flex items-center justify-center gap-2 !text-sm col-span-1"
                 >
-                  Get a Free Quote <ArrowRight size={18} />
+                  Get a Free Quote
                 </button>
                 <a
                   href="tel:+251966780537"
