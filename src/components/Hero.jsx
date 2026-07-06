@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, TrendingUp, Clock, Shield, KeyRound } from 'lucide-react';
 import { motion } from 'framer-motion';
-import heroVisual from '../assets/furtuhero.png';
 
 function scrollTo(id) {
   const el = document.getElementById(id);
@@ -18,7 +17,7 @@ export default function Hero() {
   return (
     <section id="home" className="hero-section relative overflow-hidden min-h-[100dvh] bg-white">
       <div className="hero-bg pointer-events-none" aria-hidden="true" />
-      <div className="hero-bg-overlay pointer-events-none hidden lg:block" aria-hidden="true" />
+      <div className="hero-bg-overlay pointer-events-none hidden md:block" aria-hidden="true" />
 
       <div className="section-inner relative z-10 w-full h-full">
         <div className="hero-layout flex flex-col justify-center min-h-[calc(100dvh-4.5rem)]  sm:py-12 lg:py-14">
@@ -295,16 +294,6 @@ export default function Hero() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-
-          {/* Tablet — visual below content (no duplicate on PC) */}
-          <motion.div
-            className="hero-logo-tablet-wrap hidden md:flex lg:hidden justify-center mt-8"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <img src={heroVisual} alt="" aria-hidden="true" className="max-w-md w-full h-auto object-contain pointer-events-none select-none" />
           </motion.div>
         </div>
       </div>
