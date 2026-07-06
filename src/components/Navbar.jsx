@@ -93,11 +93,11 @@ export default function Navbar() {
           <button type="button" onClick={() => goTo('home')} className="nav-brand group">
             <img
               src="/images/logo.png"
-              alt="Furtu Systems"
+              alt="furtuu Systems"
               className="h-18 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-100 mt-2"
             />
             {/* <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left">
-              <span className="block text-sm tracking-wide text-slate-900">Furtu</span>
+              <span className="block text-sm tracking-wide text-slate-900">furtuu</span>
               <span className="block text-[9px] font-bold tracking-[0.25em] text-[#166804]">SYSTEMS</span>
             </span> */}
           </button>

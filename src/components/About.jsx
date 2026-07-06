@@ -50,13 +50,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <ScrollReveal className="lg:col-span-5 text-left" direction="right">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 mb-4 sm:mb-5 tracking-tight font-display">
-              The Furtu Story
+              The furtuu Story
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              The name <span className="font-bold text-[#166804]">"Furtuu"</span> comes from the Afaan Oromo language, meaning <span className="font-semibold">"Solution," "Opportunity,"</span> or <span className="font-semibold">"Prosperity."</span> Our brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
+              The name <span className="font-bold text-[#166804]">"furtuuu"</span> comes from the Afaan Oromo language, meaning <span className="font-semibold">"Solution," "Opportunity,"</span> or <span className="font-semibold">"Prosperity."</span> Our brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Furtu Systems</span> is dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
+              Founded in Addis Ababa, <span className="font-bold text-[#166804]">furtuu Systems</span> is dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               We design and develop innovative software that simplifies business processes, enhances productivity, and transforms ideas into scalable digital products.

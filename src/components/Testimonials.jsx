@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: 'Daniel T.',
     role: 'Forex Office Owner',
-    text: 'Furtu Systems built our exchange platform from scratch. Real-time rates, multi-branch support everything works flawlessly. They understood our business from day one.',
+    text: 'furtuu Systems built our exchange platform from scratch. Real-time rates, multi-branch support everything works flawlessly. They understood our business from day one.',
     rating: 5,
     featured: true,
   },
@@ -32,7 +32,7 @@ export default function Testimonials() {
           <span className="section-badge">Client Stories</span>
           <h2 className="section-title">Trusted by Growing Businesses</h2>
           <p className="section-desc">
-            Real feedback from clients who chose Furtu Systems to power their operations.
+            Real feedback from clients who chose furtuu Systems to power their operations.
           </p>
         </ScrollReveal>
 

@@ -1,10 +1,10 @@
 {
-  "name": "Furtu-systems-website",
+  "name": "furtuu-systems-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Furtu Systems - Building Smart Solutions for a Digital Future. Modern software engineering company delivering secure, scalable, and intelligent digital solutions.",
-  "author": "Furtu Systems",
+  "description": "furtuu Systems - Building Smart Solutions for a Digital Future. Modern software engineering company delivering secure, scalable, and intelligent digital solutions.",
+  "author": "furtuu Systems",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
