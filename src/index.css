@@ -1290,8 +1290,9 @@
   position: absolute;
   inset: 0;
   background-image: url('./assets/furtuhero.png');
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
+  background-position: center center;
   pointer-events: none;
 }
 
@@ -1319,8 +1320,8 @@
 
   .hero-bg {
     opacity: 1;
-    background-size: 82% auto;
-    background-position: 100% center;
+    background-size: 100% auto;
+    background-position: center center;
   }
 
   .hero-bg-overlay {
@@ -1383,8 +1384,8 @@
 
   .hero-bg {
     opacity: 0.1;
-    background-size: 88% auto;
-    background-position: right bottom;
+    background-size: contain;
+    background-position: right center;
   }
 
   .hero-content {
