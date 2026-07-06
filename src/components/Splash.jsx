@@ -101,12 +101,12 @@ export default function Splash({ onComplete }) {
             >
               <img 
                 src="/images/whitelogo.png" 
-                alt="Furtuu Systems" 
+                alt="Furtu Systems" 
                 className="h-28 sm:h-36 md:h-44 w-auto object-contain filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
               />
               <div className="text-center">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-display tracking-[0.2em] mb-3 drop-shadow-md">
-                  FURTUU SYSTEMS
+                  FURTU SYSTEMS
                 </h1>
                 <p className="text-[10px] sm:text-xs text-white/90 font-semibold tracking-[0.15em] uppercase drop-shadow-sm">
                   Building Smart Solutions for a Digital Future

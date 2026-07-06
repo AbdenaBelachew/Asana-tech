@@ -1,14 +1,14 @@
-# Furtuu Systems - Building Smart Solutions for a Digital Future
+# Furtu Systems - Building Smart Solutions for a Digital Future
 
-Official website for Furtuu Systems, a modern software engineering company dedicated to building secure, scalable, and intelligent digital solutions.
+Official website for Furtu Systems, a modern software engineering company dedicated to building secure, scalable, and intelligent digital solutions.
 
-## About Furtuu Systems
+## About Furtu Systems
 
-**Furtuu Systems** is a modern software engineering company dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
+**Furtu Systems** is a modern software engineering company dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
 
 ### The Name
 
-The name "Furtuu" comes from the Afaan Oromo language, meaning **"Solution," "Opportunity,"** or **"Prosperity."** The brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
+The name "Furtu" comes from the Afaan Oromo language, meaning **"Solution," "Opportunity,"** or **"Prosperity."** The brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
 
 **Vision:** To become Africa's most trusted software innovation company, empowering organizations through world-class digital solutions.
 
@@ -93,4 +93,4 @@ Currently, two official plugins are available:
 
 ---
 
-© 2026 Furtuu Systems. All rights reserved.
+© 2026 Furtu Systems. All rights reserved.

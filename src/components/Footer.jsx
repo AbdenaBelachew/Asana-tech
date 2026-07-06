@@ -67,10 +67,10 @@ export default function Footer() {
               className="flex items-center gap-2.5 group cursor-pointer"
             >
               <div className="footer-logo-box w-11 h-11 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
-                <img src="/images/logo.png" alt="Furtuu Systems" className="h-8 w-auto object-contain" />
+                <img src="/images/logo.png" alt="Furtu Systems" className="h-8 w-auto object-contain" />
               </div>
               <span className="font-display font-extrabold text-lg sm:text-xl tracking-wide text-white text-left">
-                FURTUU<span className="text-emerald-200 font-bold"> SYSTEMS</span>
+                Furtu<span className="text-emerald-200 font-bold"> SYSTEMS</span>
               </span>
             </button>
 
@@ -179,7 +179,7 @@ export default function Footer() {
 
         <div className="footer-divider mt-10 md:mt-12 pt-6 text-center">
           <p className="text-xs font-semibold text-emerald-100/70 tracking-wide">
-            &copy; {new Date().getFullYear()} Furtuu Systems. All rights reserved.
+            &copy; {new Date().getFullYear()} Furtu Systems. All rights reserved.
           </p>
           <p className="md:hidden mt-2 flex items-center justify-center gap-1.5 text-[11px] font-medium text-emerald-100/50">
             <MapPin size={11} />
