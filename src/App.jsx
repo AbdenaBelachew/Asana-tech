@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Splash from './components/Splash';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechMarquee from './components/TechMarquee';
@@ -15,6 +16,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [splashComplete, setSplashComplete] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 500);
@@ -41,8 +43,13 @@ export default function App() {
   };
 
   return (
-    <div className="page-shell">
-      <Navbar />
+    <>
+      {/* Splash Screen */}
+      {!splashComplete && <Splash onComplete={() => setSplashComplete(true)} />}
+
+      {/* Main Content */}
+      <div className="page-shell">
+        <Navbar />
 
       <main className="relative z-10 pt-[4.5rem]">
         <Hero />
@@ -75,8 +82,17 @@ export default function App() {
           )}
         </AnimatePresence>
 
-       
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleScrollTo('contact')}
+          className="btn-primary h-12 px-5 rounded-full shadow-lg cursor-pointer"
+          aria-label="Contact us"
+        >
+          <MessageSquare size={18} />
+        </motion.button>
       </div>
     </div>
+    </>
   );
 }

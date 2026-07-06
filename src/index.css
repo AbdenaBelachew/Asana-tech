@@ -1289,7 +1289,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('./assets/yubahero.png');
+  background-image: url('./assets/furtuhero.png');
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none;

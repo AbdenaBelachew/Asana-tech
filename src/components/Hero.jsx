@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, TrendingUp, Clock, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-import heroVisual from '../assets/yubahero.png';
+import heroVisual from '../assets/furtuhero.png';
 
 function scrollTo(id) {
   const el = document.getElementById(id);
