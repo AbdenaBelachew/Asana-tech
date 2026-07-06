@@ -78,10 +78,10 @@ export default function Footer() {
               Building smart solutions for a digital future. Empowering businesses through innovative technology.
             </p>
 
-            <a href="tel:+251966780537" className="footer-call-cta md:hidden">
+            {/* <a href="tel:+251966780537" className="footer-call-cta md:hidden">
               <Phone size={16} />
               +251 966 780 537
-            </a>
+            </a> */}
 
             <a
               href="tel:+251966780537"
