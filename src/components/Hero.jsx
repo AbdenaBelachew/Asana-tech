@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, TrendingUp, Clock, Shield } from 'lucide-react';
+import { ArrowRight, TrendingUp, Clock, Shield, KeyRound } from 'lucide-react';
 import { motion } from 'framer-motion';
 import heroVisual from '../assets/furtuhero.png';
 
@@ -22,14 +22,215 @@ export default function Hero() {
 
       <div className="section-inner relative z-10 w-full h-full">
         <div className="hero-layout flex flex-col justify-center min-h-[calc(100dvh-4.5rem)]  sm:py-12 lg:py-14">
-          {/* Mobile only — logo above content (<768px) */}
+          {/* Mobile only — animated key above content (<768px) */}
           <motion.div
             className="hero-logo-mobile mb-2 sm:mb-8 flex justify-center md:hidden"
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src="/images/logo.png" alt="Furtuu Systems" className="w-28 h-28 sm:w-28 sm:h-28 object-contain scale-150 sm:scale-100" />
+            {/* Floating animated key - Mobile only */}
+            <motion.div
+              className="relative"
+              initial={{ rotate: -45, scale: 0, opacity: 0 }}
+              animate={{ 
+                rotate: 0,
+                scale: 1,
+                opacity: 1,
+              }}
+              transition={{ 
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.34, 1.56, 0.64, 1]
+              }}
+            >
+              {/* Orbiting tech circles */}
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={i}
+                  className="absolute inset-0 rounded-full border-2 border-[#166804]/30"
+                  style={{
+                    width: `${120 + i * 20}px`,
+                    height: `${120 + i * 20}px`,
+                    left: '50%',
+                    top: '50%',
+                    marginLeft: `-${(120 + i * 20) / 2}px`,
+                    marginTop: `-${(120 + i * 20) / 2}px`,
+                  }}
+                  animate={{
+                    rotate: 360,
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    rotate: {
+                      duration: 20 - i * 4,
+                      repeat: Infinity,
+                      ease: "linear"
+                    },
+                    scale: {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.3
+                    }
+                  }}
+                >
+                  {/* Tech dots on orbit */}
+                  <motion.div
+                    className="absolute w-2 h-2 bg-[#166804] rounded-full top-0 left-1/2 -ml-1"
+                    animate={{
+                      opacity: [1, 0.3, 1],
+                      scale: [1, 1.5, 1]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.5
+                    }}
+                  />
+                </motion.div>
+              ))}
+
+              {/* Container with floating motion */}
+              <motion.div
+                animate={{ 
+                  y: [-12, 12, -12],
+                }}
+                transition={{ 
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                {/* Key with rotation and tilt */}
+                <motion.div
+                  animate={{ 
+                    rotate: [-8, 8, -8],
+                    rotateY: [-5, 5, -5],
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#166804] via-[#1a7a05] to-[#0d5003] shadow-2xl flex items-center justify-center relative overflow-hidden border-2 border-[#166804]/20">
+                    {/* Scanning line effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-400/30 to-transparent h-8"
+                      animate={{
+                        y: ['-100%', '200%']
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: "linear",
+                        repeatDelay: 1
+                      }}
+                    />
+                    
+                    {/* Hexagon pattern overlay */}
+                    <div className="absolute inset-0 opacity-10">
+                      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <pattern id="hexagons" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <polygon points="10,2 17,6 17,14 10,18 3,14 3,6" fill="none" stroke="white" strokeWidth="0.5"/>
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#hexagons)" />
+                      </svg>
+                    </div>
+
+                    {/* Shimmer effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                      animate={{
+                        x: ['-200%', '200%']
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                        repeatDelay: 2
+                      }}
+                    />
+                    
+                    {/* Unlock pulse rings */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-emerald-400"
+                      animate={{
+                        scale: [1, 1.4],
+                        opacity: [0.6, 0]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-emerald-300"
+                      animate={{
+                        scale: [1, 1.4],
+                        opacity: [0.6, 0]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeOut",
+                        delay: 0.4
+                      }}
+                    />
+                    
+                    {/* Key icon with unlock animation */}
+                    <motion.div
+                      animate={{
+                        rotate: [0, -90, 0],
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                        repeatDelay: 2
+                      }}
+                    >
+                      <KeyRound size={64} className="text-white relative z-10 drop-shadow-lg" strokeWidth={2} />
+                    </motion.div>
+
+                    {/* Corner brackets - tech style */}
+                    {[
+                      'top-2 left-2',
+                      'top-2 right-2',
+                      'bottom-2 left-2',
+                      'bottom-2 right-2'
+                    ].map((pos, i) => (
+                      <motion.div
+                        key={i}
+                        className={`absolute ${pos} w-4 h-4`}
+                        animate={{
+                          opacity: [0.3, 1, 0.3]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: i * 0.2
+                        }}
+                      >
+                        <div className={`absolute border-emerald-400 ${
+                          i === 0 ? 'border-t-2 border-l-2 top-0 left-0 w-full h-full' :
+                          i === 1 ? 'border-t-2 border-r-2 top-0 right-0 w-full h-full' :
+                          i === 2 ? 'border-b-2 border-l-2 bottom-0 left-0 w-full h-full' :
+                          'border-b-2 border-r-2 bottom-0 right-0 w-full h-full'
+                        }`} />
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
           {/* Text content — logo is in the PC background image on the right */}
