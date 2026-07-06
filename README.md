@@ -1,14 +1,31 @@
-# Yuba Systems - Technology. Solutions. Future.
+# Furtuu Systems - Building Smart Solutions for a Digital Future
 
-Official website for Yuba Systems (Yuba.et), an Ethiopian technology company combining ancient wisdom with modern innovation.
+Official website for Furtuu Systems, a modern software engineering company dedicated to building secure, scalable, and intelligent digital solutions.
 
-## About Yuba Systems
+## About Furtuu Systems
 
-**Yuba Systems** is a modern Ethiopian technology company whose identity is rooted in Africa's rich cultural heritage while embracing cutting-edge innovation. The name "Yuba" originates from the historic Oromo Gadaa System, representing wisdom, advisory leadership, mentorship, and governance.
+**Furtuu Systems** is a modern software engineering company dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
 
-**Mission:** To design, build, and deliver innovative, secure, and scalable software solutions that empower businesses, governments, and communities through technology.
+### The Name
 
-**Vision:** To become one of Africa's most trusted technology companies by combining cultural wisdom with world-class innovation.
+The name "Furtuu" comes from the Afaan Oromo language, meaning **"Solution," "Opportunity,"** or **"Prosperity."** The brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
+
+**Vision:** To become Africa's most trusted software innovation company, empowering organizations through world-class digital solutions.
+
+**Mission:** We design and develop innovative software that simplifies business processes, enhances productivity, and transforms ideas into scalable digital products.
+
+## Core Values
+
+- Innovation
+- Integrity
+- Excellence
+- Reliability
+- Customer Success
+- Continuous Learning
+
+## Brand Promise
+
+*"Building Smart Solutions for a Digital Future."*
 
 ## Core Services
 
@@ -76,4 +93,4 @@ Currently, two official plugins are available:
 
 ---
 
-© 2026 Yuba Systems. All rights reserved.
+© 2026 Furtuu Systems. All rights reserved.

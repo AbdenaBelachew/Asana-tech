@@ -23,10 +23,10 @@ export default function CTA() {
                 Let&apos;s Build Together
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 font-display tracking-tight">
-                Ready to Transform with Wisdom-Driven Innovation?
+                Ready to Transform Your Business?
               </h2>
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
-                From custom software and AI solutions to mobile apps and digital transformation — we deliver secure, scalable technology guided by experience and excellence.
+                From custom software and AI solutions to mobile apps and digital transformation — we deliver intelligent, scalable technology that drives real impact.
               </p>
 
               <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto sm:max-w-none sm:flex sm:flex-row sm:justify-center">

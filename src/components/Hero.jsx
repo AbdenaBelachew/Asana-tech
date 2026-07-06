@@ -29,7 +29,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src="/images/logo.png" alt="Yuba Systems" className="w-28 h-28 sm:w-28 sm:h-28 object-contain scale-150 sm:scale-100" />
+            <img src="/images/logo.png" alt="Furtuu Systems" className="w-28 h-28 sm:w-28 sm:h-28 object-contain scale-150 sm:scale-100" />
           </motion.div>
 
           {/* Text content — logo is in the PC background image on the right */}
@@ -50,13 +50,13 @@ export default function Hero() {
             </motion.span>
 
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3rem] font-extrabold text-slate-900 leading-[1.2] sm:leading-[1.08] tracking-tight mb-3 sm:mb-5 font-display px-4 sm:px-0">
-              <span className="gradient-text text-glow-brand">Wisdom-Driven</span>{' '}
+              <span className="gradient-text text-glow-brand">Smart Solutions</span>{' '}
               <br className="hidden sm:block" />
-              Innovation
+              for a Digital Future
             </h1>
 
             <p className="text-xs sm:text-base md:text-lg text-slate-600 leading-relaxed mb-4 sm:mb-8 max-w-xl px-4 sm:px-0">
-              Combining Ethiopia's heritage with cutting-edge technology to deliver secure, scalable software solutions.
+              Building secure, scalable, and intelligent software that transforms businesses across Africa and beyond.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 w-full max-w-md sm:max-w-none px-4 sm:px-0 mb-4 sm:mb-0">

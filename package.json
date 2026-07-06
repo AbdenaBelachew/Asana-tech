@@ -1,10 +1,10 @@
 {
-  "name": "yuba-systems-website",
+  "name": "furtuu-systems-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Yuba Systems - Technology. Solutions. Future. Ethiopian technology company delivering innovative, secure, and scalable software solutions.",
-  "author": "Yuba Systems",
+  "description": "Furtuu Systems - Building Smart Solutions for a Digital Future. Modern software engineering company delivering secure, scalable, and intelligent digital solutions.",
+  "author": "Furtuu Systems",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

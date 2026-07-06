@@ -10,10 +10,10 @@ const stats = [
 ];
 
 const values = [
-  { icon: Shield, title: 'Wisdom & Trust', desc: 'Built on principles of trusted leadership from Africa\'s oldest democratic systems.' },
-  { icon: Zap, title: 'Innovation', desc: 'Cutting-edge AI, cloud solutions, and modern architecture that scales with your growth.' },
-  { icon: Heart, title: 'Customer Success', desc: 'Transparent collaboration, regular updates, and long-term partnerships you can rely on.' },
-  { icon: Code2, title: 'Excellence', desc: 'World-class engineering standards with secure, maintainable code built to last.' },
+  { icon: Shield, title: 'Reliability', desc: 'Dependable solutions built with enterprise-grade security and proven engineering standards.' },
+  { icon: Zap, title: 'Innovation', desc: 'Cutting-edge AI, cloud solutions, and modern architecture that drives digital transformation.' },
+  { icon: Heart, title: 'Customer Success', desc: 'Transparent collaboration, dedicated support, and long-term partnerships you can trust.' },
+  { icon: Code2, title: 'Excellence', desc: 'World-class code quality with maintainable, scalable solutions built to last.' },
 ];
 
 export default function About() {
@@ -22,9 +22,9 @@ export default function About() {
       <div className="section-inner">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span className="section-badge">Who We Are</span>
-          <h2 className="section-title">Ancient Wisdom Meets Modern Technology</h2>
+          <h2 className="section-title">Modern Engineering. Real Impact.</h2>
           <p className="section-desc">
-            Rooted in Ethiopia's rich heritage, powered by cutting-edge innovation. We build software that empowers businesses and communities with trusted leadership and excellence.
+            We build intelligent software solutions that empower businesses and organizations to thrive in the digital age.
           </p>
         </ScrollReveal>
 
@@ -50,16 +50,16 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <ScrollReveal className="lg:col-span-5 text-left" direction="right">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 mb-4 sm:mb-5 tracking-tight font-display">
-              The Yuba Story
+              The Furtuu Story
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              The name <span className="font-bold text-[#166804]">"Yuba"</span> originates from the historic Oromo Gadaa System one of Africa's oldest indigenous democratic governance structures. Within Gadaa, Yuba represents a respected stage of <span className="font-semibold">wisdom, advisory leadership, mentorship, and governance</span>.
+              The name <span className="font-bold text-[#166804]">"Furtuu"</span> comes from the Afaan Oromo language, meaning <span className="font-semibold">"Solution," "Opportunity,"</span> or <span className="font-semibold">"Prosperity."</span> Our brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Yuba Systems</span> embodies these principles by bringing trusted, intelligent solutions to every project. We believe technology should be guided by knowledge, ethics, and long-term thinking not just trends.
+              Founded in Addis Ababa, <span className="font-bold text-[#166804]">Furtuu Systems</span> is dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Today, we serve businesses, governments, NGOs, and communities across Ethiopia and beyond with custom software, mobile apps, AI solutions, cloud services, and digital transformation consulting.
+              We design and develop innovative software that simplifies business processes, enhances productivity, and transforms ideas into scalable digital products.
             </p>
           </ScrollReveal>
 

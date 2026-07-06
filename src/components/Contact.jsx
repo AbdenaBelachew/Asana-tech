@@ -6,9 +6,9 @@ const contactInfo = [
   { 
     icon: Mail, 
     label: 'Email', 
-    value: 'hello@yuba.et', 
-    display: 'hello@yuba.et',
-    href: 'mailto:hello@yuba.et',
+    value: 'hello@furtuu.com', 
+    display: 'hello@furtuu.com',
+    href: 'mailto:hello@furtuu.com',
     description: 'Drop us a line anytime'
   },
   { 
