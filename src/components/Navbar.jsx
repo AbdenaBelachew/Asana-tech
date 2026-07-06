@@ -86,20 +86,20 @@ export default function Navbar() {
         transition={{ duration: 0.3 }}
       >
         <motion.div
-          className="nav-stuck-inner mx-auto max-w-6xl flex items-center justify-between px-4 sm:px-6"
+          className="nav-stuck-inner mx-auto max-w-6xl flex items-center justify-between px-8 sm:px-14"
           animate={{ height: scrolled ? '4rem' : '4.5rem' }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.3, ease: [0.22, 0.5, 0.36, 1] }}
         >
           <button type="button" onClick={() => goTo('home')} className="nav-brand group">
             <img
               src="/images/logo.png"
               alt="Furtuu Systems"
-              className="h-16 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-100"
+              className="h-18 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-100"
             />
-            <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left">
+            {/* <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left">
               <span className="block text-sm tracking-wide text-slate-900">FURTUU</span>
               <span className="block text-[9px] font-bold tracking-[0.25em] text-[#166804]">SYSTEMS</span>
-            </span>
+            </span> */}
           </button>
 
           <div className="hidden md:flex items-center gap-3">
