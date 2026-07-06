@@ -94,7 +94,7 @@ export default function Navbar() {
             <img
               src="/images/logo.png"
               alt="Furtuu Systems"
-              className="h-18 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-100 mt-4"
+              className="h-18 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-100 mt-2"
             />
             {/* <span className="hidden sm:block font-display font-extrabold uppercase leading-tight text-left">
               <span className="block text-sm tracking-wide text-slate-900">FURTUU</span>
