@@ -7,7 +7,7 @@ const steps = [
     icon: MessageSquare,
     step: '01',
     title: 'Discovery Call',
-    desc: 'We learn your goals, users, and timeline — no jargon, just a clear conversation.',
+    desc: 'We learn your goals, users, and timeline no jargon, just a clear conversation.',
   },
   {
     icon: PenTool,
@@ -25,7 +25,7 @@ const steps = [
     icon: Rocket,
     step: '04',
     title: 'Launch & Support',
-    desc: 'Deployment, training, and ongoing support — we stay close after go-live.',
+    desc: 'Deployment, training, and ongoing support we stay close after go-live.',
   },
 ];
 

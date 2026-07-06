@@ -77,7 +77,7 @@ export default function Services() {
             Comprehensive Technology Solutions
           </h2>
           <p className="section-desc text-sm sm:text-base">
-            From AI-powered innovation to enterprise systems — we deliver secure, scalable software guided by wisdom and excellence.
+            From AI-powered innovation to enterprise systems  we deliver secure, scalable software guided by wisdom and excellence.
           </p>
         </ScrollReveal>
 
