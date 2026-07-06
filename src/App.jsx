@@ -86,10 +86,10 @@ export default function App() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleScrollTo('contact')}
-          className="btn-primary h-12 px-5 rounded-full shadow-lg cursor-pointer"
+          className="btn-primary h-8 px-3 rounded-full shadow-lg cursor-pointer"
           aria-label="Contact us"
         >
-          <MessageSquare size={18} />
+          <MessageSquare size={12} />
         </motion.button>
       </div>
     </div>
