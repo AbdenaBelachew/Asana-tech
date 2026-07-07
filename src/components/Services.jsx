@@ -77,7 +77,7 @@ export default function Services() {
             Comprehensive Technology Solutions
           </h2>
           <p className="section-desc text-sm sm:text-base">
-            From AI-powered innovation to enterprise systems  we deliver secure, scalable software guided by wisdom and excellence.
+            From AI-powered innovation to enterprise systems — we deliver secure, scalable software guided by wisdom and excellence.
           </p>
         </ScrollReveal>
 
@@ -89,10 +89,10 @@ export default function Services() {
               <ScrollReveal
                 key={s.title}
                 delay={i * 0.06}
-                className={`service-bento-cell service-bento-cell--${s.area}`}
+                className="service-bento-cell"
               >
                 <div
-                  className={`group service-card glass-card mobile-grid-card flex flex-col h-full hover:-translate-y-1.5 ${
+                  className={`group service-card glass-card mobile-grid-card flex flex-col h-full hover:-translate-y-1.5 transition-transform duration-300 ${
                     isFeatured ? 'service-card--featured' : ''
                   } ${s.accent ? 'service-card--accent' : ''}`}
                 >
@@ -100,7 +100,7 @@ export default function Services() {
                     {String(i + 1).padStart(2, '0')}
                   </span>
 
-                  <div className={`service-card-icon icon-box shrink-0 group-hover:scale-105 ${s.accent ? 'icon-box-accent' : ''}`}>
+                  <div className={`service-card-icon icon-box shrink-0 group-hover:scale-105 transition-transform duration-300 ${s.accent ? 'icon-box-accent' : ''}`}>
                     <Icon size={18} />
                   </div>
 

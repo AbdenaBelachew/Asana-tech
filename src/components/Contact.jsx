@@ -3,27 +3,27 @@ import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Clock, Globe, Message
 import ScrollReveal from './ScrollReveal';
 
 const contactInfo = [
-  { 
-    icon: Mail, 
-    label: 'Email', 
-    value: 'hello@furtuu.com', 
-    display: 'hello@furtuu.com',
-    href: 'mailto:hello@furtuu.com',
+  {
+    icon: Mail,
+    label: 'Email',
+    value: 'hello@furtuusystems.com',
+    display: 'hello@furtuusystems.com',
+    href: 'mailto:hello@furtuusystems.com',
     description: 'Drop us a line anytime'
   },
-  { 
-    icon: Phone, 
-    label: 'Phone', 
-    value: '+251 966 780 537', 
+  {
+    icon: Phone,
+    label: 'Phone',
+    value: '+251 966 780 537',
     display: '+251 966 780 537',
-    href: 'tel:+251966780537', 
+    href: 'tel:+251966780537',
     accent: true,
     description: 'Mon-Fri, 9AM-6PM EAT'
   },
-  { 
-    icon: MapPin, 
-    label: 'Office', 
-    value: 'Bole, Addis Ababa, Ethiopia', 
+  {
+    icon: MapPin,
+    label: 'Office',
+    value: 'Bole, Addis Ababa, Ethiopia',
     display: 'Bole, Addis Ababa',
     href: null,
     description: 'Visit us in person'
@@ -41,14 +41,14 @@ const inputClass =
 
 export default function Contact() {
   const [status, setStatus] = useState('idle');
-  const [form, setForm] = useState({ 
-    name: '', 
-    email: '', 
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
     phone: '',
     company: '',
-    service: '', 
+    service: '',
     budget: '',
-    message: '' 
+    message: ''
   });
 
   const handleSubmit = (e) => {
@@ -56,14 +56,14 @@ export default function Contact() {
     setStatus('sending');
     setTimeout(() => {
       setStatus('success');
-      setForm({ 
-        name: '', 
-        email: '', 
+      setForm({
+        name: '',
+        email: '',
         phone: '',
         company: '',
-        service: '', 
+        service: '',
         budget: '',
-        message: '' 
+        message: ''
       });
     }, 1500);
   };
@@ -75,7 +75,7 @@ export default function Contact() {
           <span className="section-badge">Get In Touch</span>
           <h2 className="section-title">Let&apos;s Build Something Extraordinary</h2>
           <p className="section-desc">
-            Whether you&apos;re starting from scratch or scaling an existing system, we&apos;re here to help. 
+            Whether you&apos;re starting from scratch or scaling an existing system, we&apos;re here to help.
             Share your vision and we&apos;ll respond within 4 hours with a clear path forward.
           </p>
         </ScrollReveal>
@@ -127,8 +127,8 @@ export default function Contact() {
                               {c.label}
                             </p>
                             {c.href ? (
-                              <a 
-                                href={c.href} 
+                              <a
+                                href={c.href}
                                 className="text-sm font-semibold text-slate-900 hover:text-[#166804] transition-colors duration-300 block mb-1"
                               >
                                 {c.display}
@@ -207,13 +207,13 @@ export default function Contact() {
                       Thank You for Reaching Out!
                     </h3>
                     <p className="text-slate-600 max-w-md text-sm leading-relaxed">
-                      We&apos;ve received your message and will get back to you within 4 business hours. 
+                      We&apos;ve received your message and will get back to you within 4 business hours.
                       In the meantime, feel free to explore our portfolio or check out our latest projects.
                     </p>
                   </div>
-                  <button 
-                    type="button" 
-                    onClick={() => setStatus('idle')} 
+                  <button
+                    type="button"
+                    onClick={() => setStatus('idle')}
                     className="btn-secondary !px-8 !py-3 !text-sm mt-2"
                   >
                     Send Another Message
@@ -316,7 +316,7 @@ export default function Contact() {
                       </select>
                     </div>
 
-              
+
 
                     <div>
                       <label htmlFor="c-message" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
@@ -337,19 +337,19 @@ export default function Contact() {
                     </div>
 
                     <div className="pt-4">
-                      <button 
-                        type="submit" 
-                        disabled={status === 'sending'} 
+                      <button
+                        type="submit"
+                        disabled={status === 'sending'}
                         className="btn-primary !w-full !py-4 !rounded-xl disabled:opacity-70 disabled:cursor-not-allowed text-base font-bold shadow-lg hover:shadow-xl"
                       >
                         {status === 'sending' ? (
                           <>
-                            <Loader2 size={18} className="animate-spin" /> 
+                            <Loader2 size={18} className="animate-spin" />
                             <span>Sending Your Message...</span>
                           </>
                         ) : (
                           <>
-                            <Send size={18} /> 
+                            <Send size={18} />
                             <span>Send Message</span>
                           </>
                         )}

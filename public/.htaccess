@@ -1,16 +1,29 @@
-# Force ErrorDocument
-ErrorDocument 404 /404.html
-
+# CPanel Apache Configuration for React SPA
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Redirect to HTTPS
+  # HTTPS redirect
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # LiteSpeed specific: forcefully route non-existent files to 404.html
+  # Remove trailing slashes (optional, helps with canonical URLs)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+  # SPA routing: serve index.html for all non-existent files/directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /404.html [L]
+  RewriteRule ^(.*)$ /index.html [L]
 </IfModule>
+
+# Fallback: if mod_rewrite disabled, still serve index.html
+<IfModule mod_rewrite.c>
+  ErrorDocument 404 /index.html
+</IfModule>
+
+# Additional protection
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|txt)$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>

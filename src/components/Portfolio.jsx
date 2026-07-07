@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import useIsDesktop from '../hooks/useIsDesktop';
 import {
   ExternalLink,
   X,
@@ -22,15 +23,15 @@ import zinashImg from '../assets/zinash.png';
 const categories = [
   { id: 'all', label: 'All Projects' },
   { id: 'healthcare', label: 'Healthcare' },
-  { id: 'retail', label: 'Retail & E-Commerce' },
-  { id: 'events', label: 'Events & Media' },
+  { id: 'retail', label: 'Retail' },
+  { id: 'events', label: 'Events' },
   { id: 'travel', label: 'Travel' },
 ];
 
 const categoryLabels = {
   healthcare: 'Healthcare',
-  retail: 'Retail & E-Commerce',
-  events: 'Events & Media',
+  retail: 'Retail',
+  events: 'Events',
   travel: 'Travel',
 };
 
@@ -57,7 +58,7 @@ const projects = [
     category: 'retail',
     url: '#',
     image: kansenaImg,
-    desc: 'Fashion e-commerce storefront for Kan Seenaa Closet — brand storytelling, product showcase, and a polished “Wear Your Royalty” experience.',
+    desc: 'Fashion e-commerce storefront for Kan Seenaa Closet — brand storytelling, product showcase, and a polished "Wear Your Royalty" experience.',
     tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
   },
   {
@@ -66,12 +67,12 @@ const projects = [
     category: 'retail',
     url: 'https://womoveactivewear.com/',
     image: womoveImg,
-    desc: 'Activewear brand website — “Built to Move. Made to Be Seen.” Product highlights, brand identity, and mobile-first shopping flow.',
+    desc: 'Activewear brand website — "Built to Move. Made to Be Seen." Product highlights, brand identity, and mobile-first shopping flow.',
     tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
   },
   {
     id: 4,
-    title: 'Zinash Olani Promotion & Events',
+    title: 'Zinash Olani Events',
     category: 'events',
     url: '#',
     image: zinashImg,
@@ -93,7 +94,7 @@ const projects = [
     category: 'retail',
     url: '#',
     image: liduImg,
-    desc: 'Lifestyle e-commerce store — “God Is In The Details.” Curated products, refined brand presentation, and a seamless shopping experience.',
+    desc: 'Lifestyle e-commerce store — "God Is In The Details." Curated products, refined brand presentation, and a seamless shopping experience.',
     tech: ['React', 'Vite', 'TailwindCSS', 'Vercel'],
   },
 ];
@@ -128,7 +129,9 @@ function ProjectVisual({ image, category, title, variant = 'card' }) {
 }
 
 function ProjectModal({ project, projects: list, onClose, onNavigate }) {
-  const reduceMotion = useReducedMotion();
+  const prefersReduced = useReducedMotion();
+  const isDesktop = useIsDesktop();
+  const reduceMotion = prefersReduced || isDesktop;
   const { gradient } = projectMeta[project.category] ?? projectMeta.retail;
   const currentIndex = list.findIndex((p) => p.id === project.id);
   const hasPrev = currentIndex > 0;
@@ -172,7 +175,8 @@ function ProjectModal({ project, projects: list, onClose, onNavigate }) {
         exit={{ opacity: 0, y: reduceMotion ? 0 : 12, scale: reduceMotion ? 1 : 0.98 }}
         transition={{ type: 'spring', damping: 28, stiffness: 320 }}
         onClick={(e) => e.stopPropagation()}
-        className="project-modal-panel relative w-full max-w-sm sm:max-w-md z-10 flex flex-col overflow-hidden rounded-2xl shadow-2xl mx-auto"
+        className="project-modal-panel relative w-full max-w-[90vw] sm:max-w-md z-10 flex flex-col overflow-hidden rounded-2xl shadow-2xl mx-auto my-auto"
+        style={{ marginTop: 'auto', marginBottom: 'auto' }}
       >
         <div className={`project-modal-visual shrink-0 bg-gradient-to-br ${gradient}`}>
           <div className="project-modal-browser">
@@ -298,7 +302,7 @@ export default function Portfolio() {
           <span className="section-badge">Case Studies</span>
           <h2 className="section-title">Featured Client Deliveries</h2>
           <p className="section-desc">
-            High-performance enterprise systems we&apos;ve shipped to production across Ethiopia.
+            High-performance enterprise systems we've shipped to production across Ethiopia.
           </p>
         </ScrollReveal>
 
@@ -309,7 +313,7 @@ export default function Portfolio() {
                 key={cat.id}
                 type="button"
                 onClick={() => setFilter(cat.id)}
-                className={`px-4 py-2.5 sm:px-5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer text-center ${
+                className={`px-4 py-2.5 sm:px-5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer text-center tap-highlight-transparent ${
                   filter === cat.id
                     ? 'btn-primary !px-4 sm:!px-5 !py-2.5 shadow-md'
                     : 'btn-secondary !px-4 sm:!px-5 !py-2.5 !text-slate-600'

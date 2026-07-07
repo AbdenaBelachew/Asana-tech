@@ -172,7 +172,7 @@ export default function Footer() {
                   <Icon className="w-3.5 h-3.5" />
                 </a>
               ))}
-              
+
             </div>
           </div>
         </div>

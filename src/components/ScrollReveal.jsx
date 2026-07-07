@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import useIsDesktop from '../hooks/useIsDesktop';
 
 export default function ScrollReveal({
   children,
@@ -9,7 +10,9 @@ export default function ScrollReveal({
   once = true,
   scale = true,
 }) {
-  const reduceMotion = useReducedMotion();
+  const prefersReduced = useReducedMotion();
+  const isDesktop = useIsDesktop();
+  const reduceMotion = prefersReduced || isDesktop;
 
   const offsets = {
     up: { y: reduceMotion ? 0 : 36, x: 0 },
@@ -20,6 +23,10 @@ export default function ScrollReveal({
   };
 
   const { x, y } = offsets[direction] ?? offsets.up;
+
+  if (isDesktop) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div

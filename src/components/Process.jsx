@@ -41,7 +41,7 @@ export default function Process() {
           </p>
         </ScrollReveal>
 
-        <div className="process-steps-grid grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6 relative">
+        <div className="process-steps-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 relative">
           <div className="hidden lg:block absolute top-[3.25rem] left-[12%] right-[12%] h-px process-line" />
 
           {steps.map((s, i) => {
@@ -49,13 +49,13 @@ export default function Process() {
             return (
               <ScrollReveal key={s.step} delay={i * 0.08}>
                 <div className="glass-card mobile-grid-card p-4 sm:p-6 lg:p-7 h-full flex flex-col hover:-translate-y-1 relative">
-                  <div className="grid grid-cols-[auto_1fr] sm:flex sm:items-center sm:justify-between gap-2 sm:gap-0 mb-3 sm:mb-5">
-                    <div className="icon-box w-10 h-10 sm:w-12 sm:h-12">
+                  <div className="flex items-center justify-between gap-3 mb-3 sm:mb-5">
+                    <div className="icon-box w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
                       <Icon size={20} />
                     </div>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#166804]/15 font-display text-right sm:text-left">{s.step}</span>
+                    <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#166804]/15 font-display text-right shrink-0">{s.step}</span>
                   </div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 mb-1.5 sm:mb-2 font-display">{s.title}</h3>
+                  <h3 className="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 mb-2 font-display">{s.title}</h3>
                   <p className="text-[11px] sm:text-sm text-slate-600 leading-relaxed flex-1">{s.desc}</p>
                 </div>
               </ScrollReveal>

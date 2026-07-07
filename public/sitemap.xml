@@ -1,12 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="
+          https://www.sitemaps.org/schemas/sitemap/0.9
+          https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+          https://www.google.com/schemas/sitemap-image/1.1
+          https://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+  <!-- Core Pages -->
+
   <url>
     <loc>https://furtuusystems.com/</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-07</lastmod>
+    <image:image>
+      <image:loc>https://furtuusystems.com/images/logo.png</image:loc>
+      <image:title>Furtuu Systems — Smart Software, Real Impact</image:title>
+      <image:caption>Furtuu Systems is a leading software company in Addis Ababa, Ethiopia, delivering custom software, web apps, mobile apps, AI solutions, cloud services, and enterprise ERP systems.</image:caption>
+    </image:image>
   </url>
+
+  <url>
+    <loc>https://furtuusystems.com/services</loc>
+    <lastmod>2026-07-07</lastmod>
+    <image:image>
+      <image:loc>https://furtuusystems.com/images/logo.png</image:loc>
+      <image:title>Software Development Services — Furtuu Systems</image:title>
+      <image:caption>Custom software development, web applications, mobile apps, AI solutions, cloud services, ERP systems, cybersecurity, and digital transformation in Ethiopia.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://furtuusystems.com/about</loc>
+    <lastmod>2026-07-07</lastmod>
+    <image:image>
+      <image:loc>https://furtuusystems.com/images/logo.png</image:loc>
+      <image:title>About Furtuu Systems — Software Company in Addis Ababa</image:title>
+      <image:caption>Learn about Furtuu Systems, a technology company founded in Addis Ababa (Finfinnee), Ethiopia, dedicated to building secure, scalable, and intelligent software solutions across Africa.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://furtuusystems.com/projects</loc>
+    <lastmod>2026-07-07</lastmod>
+    <image:image>
+      <image:loc>https://furtuusystems.com/images/logo.png</image:loc>
+      <image:title>Our Projects — Furtuu Systems Portfolio</image:title>
+      <image:caption>Browse Furtuu Systems' portfolio including Dr. Moti Ortho, Kan Seenaa Closet, Womove Active, Zinash Olani Events, Yeroon Travel, and Lidya Lifestyle digital platforms.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://furtuusystems.com/contact</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Blog Articles -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/how-ai-is-transforming-erp</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Website Development -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/website-development-cost-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-long-does-it-take-to-build-a-website-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/best-website-development-company-in-addis-ababa</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-to-create-a-business-website-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/ecommerce-website-development-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/fast-website-development-for-small-businesses</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/website-redesign-services-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/seo-services-for-ethiopian-businesses</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/google-business-profile-for-ethiopian-companies</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-to-rank-your-business-on-google-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- ERP Solutions -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/what-is-an-erp-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/erp-software-for-ethiopian-businesses</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/best-erp-for-cooperatives-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/erp-for-manufacturing-companies</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/erp-for-distributors-and-wholesalers</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/inventory-management-software-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/hr-and-payroll-software-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/accounting-software-vs-erp</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-to-implement-an-erp-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/sap-vs-custom-erp</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- AI & Automation -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/how-ai-can-help-ethiopian-businesses</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/ai-chatbots-for-customer-service</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/business-process-automation</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/document-automation-for-companies</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-ai-reduces-operational-costs</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/ai-for-healthcare-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/ai-for-banks-and-financial-institutions</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Mobile Apps -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/mobile-app-development-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/android-app-development-company</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/business-mobile-app-benefits</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/flutter-vs-react-native</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-much-does-an-app-cost-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Wedding Invitation Systems -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/digital-wedding-invitations-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/online-wedding-rsvp-platform</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/modern-ethiopian-wedding-websites</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/create-a-personalized-wedding-invitation-website</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/why-use-a-digital-wedding-invitation</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/best-digital-wedding-card-designs</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-to-share-wedding-invitations-with-qr-codes</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/save-money-with-online-wedding-invitations</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Cooperatives & Financial Institutions -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/shareholder-management-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/cooperative-management-software</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/microfinance-software-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/sacco-management-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/banking-software-solutions</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/digital-transformation-for-cooperatives</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Healthcare -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/hospital-management-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/clinic-management-software</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/electronic-medical-record-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/appointment-booking-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Tourism & Hospitality -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/travel-agency-website-development</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/hotel-management-software</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/online-booking-system</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/tourism-digital-transformation</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- General Business -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/how-to-start-a-business-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-digital-transformation-helps-small-businesses</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/cloud-computing-for-businesses</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/data-security-best-practices</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/how-to-choose-a-software-company</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/custom-software-vs-off-the-shelf</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/top-technology-trends-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
+  <!-- Location-based SEO -->
+
+  <url>
+    <loc>https://furtuusystems.com/blog/web-development-company-in-addis-ababa</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/erp-software-for-ethiopian-companies</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/mobile-app-developers-in-addis-ababa</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://furtuusystems.com/blog/software-development-services-in-ethiopia</loc>
+    <lastmod>2026-07-07</lastmod>
+  </url>
+
 </urlset>
