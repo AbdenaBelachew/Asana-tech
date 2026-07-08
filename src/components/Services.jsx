@@ -100,9 +100,7 @@ export default function Services() {
                     {String(i + 1).padStart(2, '0')}
                   </span>
 
-                  <div className={`service-card-icon icon-box shrink-0 group-hover:scale-105 transition-transform duration-300 ${s.accent ? 'icon-box-accent' : ''}`}>
-                    <Icon size={18} />
-                  </div>
+                  
 
                   <div className="service-card-body min-w-0 flex flex-col flex-1">
                     <h3 className="service-card-title font-extrabold text-slate-900 mb-1.5 sm:mb-2 group-hover:text-[#166804] transition-colors duration-300">

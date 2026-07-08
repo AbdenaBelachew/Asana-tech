@@ -1560,6 +1560,17 @@
   pointer-events: none;
 }
 
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
 .hero-bg-overlay {
   position: absolute;
   inset: 0;

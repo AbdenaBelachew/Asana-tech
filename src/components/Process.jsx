@@ -50,9 +50,7 @@ export default function Process() {
               <ScrollReveal key={s.step} delay={i * 0.08}>
                 <div className="glass-card mobile-grid-card p-4 sm:p-6 lg:p-7 h-full flex flex-col hover:-translate-y-1 relative">
                   <div className="flex items-center justify-between gap-3 mb-3 sm:mb-5">
-                    <div className="icon-box w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                      <Icon size={20} />
-                    </div>
+                   
                     <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#166804]/15 font-display text-right shrink-0">{s.step}</span>
                   </div>
                   <h3 className="text-sm sm:text-base lg:text-lg font-extrabold text-slate-900 mb-2 font-display">{s.title}</h3>

@@ -34,9 +34,7 @@ export default function About() {
             return (
               <ScrollReveal key={s.label} delay={i * 0.07}>
                 <div className="stat-tile hover:-translate-y-1 !p-4 sm:!p-7">
-                  <div className={`icon-box w-9 h-9 sm:w-10 sm:h-10 ${s.accent ? 'icon-box-accent' : ''}`}>
-                    <Icon size={18} />
-                  </div>
+                  
                   <div className="text-xl sm:text-3xl font-extrabold text-slate-900 font-display">{s.value}</div>
                   <div className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider leading-tight">{s.label}</div>
                 </div>
@@ -69,9 +67,7 @@ export default function About() {
               return (
                 <ScrollReveal key={v.title} delay={i * 0.08}>
                   <div className="glass-card mobile-grid-card p-4 sm:p-6 hover:-translate-y-0.5 group h-full flex flex-col">
-                    <div className={`icon-box mb-3 sm:mb-4 w-9 h-9 sm:w-11 sm:h-11 ${v.accent ? 'icon-box-accent' : ''}`}>
-                      <Icon size={18} />
-                    </div>
+                   
                     <h4 className="text-sm sm:text-base font-extrabold text-slate-900 mb-1.5 sm:mb-2 group-hover:text-[#166804] transition-colors duration-300">
                       {v.title}
                     </h4>

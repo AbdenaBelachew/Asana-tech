@@ -161,7 +161,7 @@ export default function Navbar() {
             <img
               src="/images/logo.png"
               alt="furtuu Systems"
-              className="h-14 sm:h-16 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+              className="h-24 sm:h-32 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105 mt-4"
             />
           </Link>
 
