@@ -157,19 +157,18 @@
   @apply mt-4 text-slate-600 text-base sm:text-lg leading-relaxed;
 }
 
-/* ─── Cards & glass ─── */
+/* ─── Cards & pure UI ─── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(22, 104, 4, 0.08);
-  box-shadow: 0 4px 24px -4px rgba(22, 104, 4, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
-  @apply rounded-3xl transition-all duration-300 ease-out;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  @apply rounded-xl transition-all duration-300 ease-out;
 }
 
 .glass-card:hover {
-  border-color: rgba(22, 104, 4, 0.16);
-  box-shadow: 0 12px 40px -8px rgba(22, 104, 4, 0.12), 0 4px 12px rgba(15, 23, 42, 0.05);
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+  transform: translateY(-2px);
 }
 
 /* ============================================
@@ -205,11 +204,9 @@
     margin-top: 0 !important;
     max-width: none !important;
     padding: 1rem !important;
-    background: rgba(255, 255, 255, 0.78) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(22, 104, 4, 0.08) !important;
-    box-shadow: 0 4px 24px -4px rgba(22, 104, 4, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
   }
 }
 
@@ -401,11 +398,9 @@
   .about-values-grid .glass-card,
   .contact-info-grid .glass-card,
   .contact-form-shell {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(22, 104, 4, 0.1);
-    box-shadow: 0 4px 20px -6px rgba(22, 104, 4, 0.1);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
     border-radius: 1rem;
   }
 
@@ -423,11 +418,9 @@
   }
 
   .hero-stats-row .stat-tile-compact {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(22, 104, 4, 0.1);
-    box-shadow: 0 4px 20px -6px rgba(22, 104, 4, 0.1);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     border-radius: 0.75rem;
     min-height: unset;
     padding: 0.5rem 0.125rem;
@@ -707,32 +700,21 @@
   color: var(--color-brand);
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(120deg, #166804 0%, #2180cc 55%, #2d8a1a 100%);
-}
-
-.text-glow-brand {
-  text-shadow: 0 0 40px rgba(22, 104, 4, 0.25);
-}
+/* Text Gradients Removed for Natural UI */
 
 /* ─── Responsive grid layouts ─── */
 .stat-tile {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(22, 104, 4, 0.08);
-  box-shadow: 0 4px 24px -4px rgba(22, 104, 4, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
-  @apply rounded-2xl p-4 flex flex-col items-center text-center gap-2 transition-all duration-300 ease-out hover:-translate-y-0.5;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  @apply rounded-xl p-4 flex flex-col items-center text-center gap-2 transition-all duration-300 ease-out hover:-translate-y-0.5;
 }
 
 .stat-tile-compact {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(22, 104, 4, 0.08);
-  box-shadow: 0 4px 24px -4px rgba(22, 104, 4, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
-  @apply rounded-xl p-3 flex flex-col items-center justify-center text-center gap-1 min-h-[88px] transition-all duration-300 ease-out;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  @apply rounded-lg p-3 flex flex-col items-center justify-center text-center gap-1 min-h-[88px] transition-all duration-300 ease-out;
 }
 
 .bento-featured {
@@ -1566,10 +1548,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 250px;
-  background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,0) 100%);
+  height: 180px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
 }
+
+
+
 
 .hero-bg-overlay {
   position: absolute;
@@ -1603,12 +1588,7 @@
   }
 
   .hero-bg-overlay {
-    background: linear-gradient(100deg,
-        rgba(255, 255, 255, 0.97) 0%,
-        rgba(255, 255, 255, 0.92) 32%,
-        rgba(255, 255, 255, 0.72) 48%,
-        rgba(255, 255, 255, 0.25) 62%,
-        transparent 78%);
+    background: none;
   }
 
   .hero-layout {

@@ -22,9 +22,9 @@ function AnimatedLogo({ size = 112, className = '' }) {
       style={{ width: size, height: size }}
       initial={{ rotateY: -180, scale: 0, opacity: 0 }}
       animate={{ rotateY: 0, scale: 1, opacity: 1 }}
-      transition={{ 
-        duration: 1.6, 
-        type: "spring", 
+      transition={{
+        duration: 1.6,
+        type: "spring",
         damping: 15,
         stiffness: 120,
         delay: 0.2
@@ -55,8 +55,8 @@ function AnimatedLogo({ size = 112, className = '' }) {
             key={`particle-${i}`}
             className="absolute left-1/2 top-1/2 w-1.5 h-1.5 bg-[#1a7a05] rounded-full"
             initial={{ x: "-50%", y: "-50%", scale: 0, opacity: 0 }}
-            animate={{ 
-              x: `calc(-50% + ${Math.cos(angle * Math.PI / 180) * distance}px)`, 
+            animate={{
+              x: `calc(-50% + ${Math.cos(angle * Math.PI / 180) * distance}px)`,
               y: `calc(-50% + ${Math.sin(angle * Math.PI / 180) * distance}px)`,
               scale: [0, 1, 0],
               opacity: [0, 0.8, 0]
@@ -70,9 +70,9 @@ function AnimatedLogo({ size = 112, className = '' }) {
         );
       })}
 
-      <motion.div 
+      <motion.div
         className="w-full h-full relative z-10"
-        animate={{ 
+        animate={{
           y: [-8, 8],
           filter: [
             'drop-shadow(0px 4px 8px rgba(0,0,0,0.2))',
@@ -87,11 +87,12 @@ function AnimatedLogo({ size = 112, className = '' }) {
           delay: 0.8 // Starts floating after the entrance
         }}
       >
-        <DrawLogo 
-          className="w-full h-full" 
-          idPrefix="hero" 
-          primaryColor="#166804" 
-          secondaryColor="#379707" 
+        <DrawLogo
+          className="w-full h-full"
+          idPrefix="hero"
+          primaryColor="#166804"
+          secondaryColor="#379707"
+          loop={true}
         />
       </motion.div>
     </motion.div>
@@ -100,38 +101,26 @@ function AnimatedLogo({ size = 112, className = '' }) {
 
 export default function Hero() {
   return (
-    <section id="home" className="hero-section relative overflow-hidden min-h-[100dvh] pt-2 md:pt-[2rem] bg-white flex items-center">
-      {/* Animated background patterns */}
-      <div className="hero-bg pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(22,104,4,0.03),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(33,128,204,0.03),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_24%,rgba(22,104,4,0.02)_25%,rgba(22,104,4,0.02)_26%,transparent_27%,transparent_74%,rgba(22,104,4,0.02)_75%,rgba(22,104,4,0.02)_76%,transparent_77%,transparent),linear-gradient(-45deg,transparent_24%,rgba(22,104,4,0.02)_25%,rgba(22,104,4,0.02)_26%,transparent_27%,transparent_74%,rgba(22,104,4,0.02)_75%,rgba(22,104,4,0.02)_76%,transparent_77%,transparent)]" style={{ backgroundSize: '60px 60px' }} />
-      </div>
+    <section id="home" className="hero-section relative overflow-hidden min-h-[100dvh] pt-2 md:pt-[2rem] flex items-center">
+      {/* Simple clean background overlay */}
+      <div className="hero-bg pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="hero-bg-overlay pointer-events-none hidden md:block absolute inset-0" aria-hidden="true" />
 
       <div className="section-inner relative z-10 w-full">
-        <div className="hero-layout flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 min-h-[calc(100dvh-3rem)] py-4 lg:py-8">
-          
+        <div className="hero-layout flex flex-col items-start justify-center gap-3 sm:gap-6 lg:gap-8 min-h-[calc(100dvh-3rem)] py-6 sm:py-10 lg:py-16">
+
+          {/* Mobile only — animated logo, centered */}
           <motion.div
-            className="w-full lg:w-1/2 flex justify-center items-center order-first lg:order-last mb-4 lg:mb-0"
+            className="flex justify-center w-full mb-1 md:hidden"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            {/* Responsive sizing for the AnimatedLogo */}
-            <div className="md:hidden">
-              <AnimatedLogo size={120} />
-            </div>
-            <div className="hidden md:block lg:hidden">
-              <AnimatedLogo size={200} />
-            </div>
-            <div className="hidden lg:block">
-              <AnimatedLogo size={320} />
-            </div>
+            <AnimatedLogo size={100} />
           </motion.div>
 
           <motion.div
-            className="hero-content w-full lg:w-1/2 max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
+            className="hero-content w-full max-w-4xl"
             initial="hidden"
             animate="visible"
             variants={{
@@ -143,35 +132,34 @@ export default function Hero() {
             }}
           >
             <motion.span
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-5 glass-card hero-badge-flat"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide uppercase mb-3 bg-slate-100 text-slate-600 border border-slate-200 w-fit"
               variants={{
-                hidden: { opacity: 0, scale: 0.8, y: 20 },
-                visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", damping: 12 } }
+                hidden: { opacity: 0, y: 10 },
+                visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 15 } }
               }}
             >
-              <span className="w-2 h-2 rounded-full bg-[#166804] animate-pulse" />
               Addis Ababa · Ethiopia
             </motion.span>
 
             <motion.h1
-              className="font-extrabold text-slate-900 tracking-tight font-display leading-tight mb-3 sm:mb-5"
+              className="font-extrabold text-slate-900 tracking-tight font-display leading-[1.1] mb-3 sm:mb-5"
               variants={{
-                hidden: { opacity: 0, y: 30 },
+                hidden: { opacity: 0, y: 24 },
                 visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 14, stiffness: 100 } }
               }}
             >
-              <span className="gradient-text text-glow-brand text-4xl sm:text-5xl md:text-6xl block">
+              <span className="text-3xl sm:text-4xl lg:text-5xl block">
                 Smart Solutions
               </span>
-              <span className="text-3xl sm:text-4xl md:text-5xl block mt-1 sm:mt-2">
+              <span className="text-2xl sm:text-3xl lg:text-4xl block mt-1 text-slate-700">
                 for a Digital Future
               </span>
             </motion.h1>
 
             <motion.p
-              className="text-slate-600 leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base lg:text-lg"
+              className="text-slate-500 leading-relaxed mb-5 sm:mb-7 max-w-md text-sm sm:text-base"
               variants={{
-                hidden: { opacity: 0, y: 20 },
+                hidden: { opacity: 0, y: 16 },
                 visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 15 } }
               }}
             >
@@ -179,50 +167,50 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex flex-row gap-3 sm:gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0"
+              className="flex flex-row gap-3 items-center w-full sm:w-auto"
               variants={{
-                hidden: { opacity: 0, y: 20 },
+                hidden: { opacity: 0, y: 16 },
                 visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 15 } }
               }}
             >
               <button
                 type="button"
                 onClick={() => scrollTo('contact')}
-                className="btn-primary !px-4 sm:!px-6 !py-3 sm:!py-3.5 !text-xs sm:!text-sm font-semibold flex items-center justify-center gap-1.5 sm:gap-2 tap-highlight-transparent flex-1 sm:flex-none shadow-lg hover:shadow-[#166804]/40"
+                className="btn-primary !px-5 !py-2.5 !text-sm font-semibold flex-1 sm:flex-none shadow-sm hover:shadow-md transition-shadow"
               >
                 Start a Project
               </button>
               <button
                 type="button"
                 onClick={() => scrollTo('projects')}
-                className="btn-secondary !px-4 sm:!px-6 !py-3 sm:!py-3.5 !text-xs sm:!text-sm font-semibold flex items-center justify-center tap-highlight-transparent flex-1 sm:flex-none whitespace-nowrap hover:bg-[#166804]/5"
+                className="btn-secondary !px-5 !py-2.5 !text-sm font-semibold flex-1 sm:flex-none hover:bg-slate-50 transition-colors"
               >
                 View Our Work
               </button>
             </motion.div>
 
-            {/* Stats - Visible on small screens and up */}
+            {/* Stats */}
             <motion.div
-              className="hero-stats-row grid grid-cols-3 gap-2 sm:gap-4 w-full max-w-lg mx-auto lg:mx-0 mt-8 sm:mt-12"
+              className="grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-sm sm:max-w-md mt-6 sm:mt-10"
               variants={{
                 hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.6 } }
+                visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.5 } }
               }}
             >
               {stats.map(({ icon: Icon, value, label }) => (
                 <motion.div
                   key={label}
-                  className="stat-tile-compact p-4 bg-white/50 backdrop-blur-md rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+                  className="flex flex-col items-start gap-1 p-3 sm:p-4 bg-white rounded-xl border border-slate-200 shadow-sm"
                   variants={{
-                    hidden: { opacity: 0, scale: 0.8, y: 20 },
-                    visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", damping: 12 } }
+                    hidden: { opacity: 0, y: 12 },
+                    visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 14 } }
                   }}
                 >
-                  <div className="icon-box w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 bg-slate-50 rounded-lg flex items-center justify-center text-[#166804]">
-                    <Icon size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center text-[#166804] mb-0.5">
+                    <Icon size={15} className="sm:w-5 sm:h-5" />
                   </div>
-                  <div className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display leading-none mb-1">{value}</div>
-                  <div className="text-[10px] sm:text-xs font-semibold text-slate-500 leading-tight uppercase tracking-wider">{label}</div>
+                  <div className="text-lg sm:text-xl font-extrabold text-slate-900 leading-none">{value}</div>
+                  <div className="text-[10px] sm:text-[11px] font-medium text-slate-400 uppercase tracking-wider leading-none">{label}</div>
                 </motion.div>
               ))}
             </motion.div>

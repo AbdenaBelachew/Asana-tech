@@ -5,7 +5,8 @@ export const DrawLogo = ({
   className,
   idPrefix = "splash",
   primaryColor = "#ffffff",
-  secondaryColor = "#a3f77b"
+  secondaryColor = "#a3f77b",
+  loop = false
 }) => (
   <motion.svg
     xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +39,16 @@ export const DrawLogo = ({
       cx="35" cy="65" r="18"
       variants={{
         hidden: { pathLength: 0, opacity: 0 },
-        visible: { pathLength: 1, opacity: 1, transition: { duration: 1.5, ease: "easeInOut" } }
+        visible: { 
+          pathLength: 1, 
+          opacity: 1, 
+          transition: { 
+            duration: 1.5, 
+            ease: "easeInOut",
+            repeat: loop ? Infinity : 0,
+            repeatDelay: loop ? 4 : 0 
+          } 
+        }
       }}
       filter={`url(#glow-${idPrefix})`}
     />
@@ -47,7 +57,17 @@ export const DrawLogo = ({
       cx="35" cy="65" r="6"
       variants={{
         hidden: { pathLength: 0, opacity: 0 },
-        visible: { pathLength: 1, opacity: 1, transition: { duration: 1, delay: 0.5, ease: "easeInOut" } }
+        visible: { 
+          pathLength: 1, 
+          opacity: 1, 
+          transition: { 
+            duration: 1, 
+            delay: 0.5, 
+            ease: "easeInOut",
+            repeat: loop ? Infinity : 0,
+            repeatDelay: loop ? 4.5 : 0 
+          } 
+        }
       }}
     />
     
@@ -56,7 +76,17 @@ export const DrawLogo = ({
       d="M 47.7 52.3 L 80 20"
       variants={{
         hidden: { pathLength: 0, opacity: 0 },
-        visible: { pathLength: 1, opacity: 1, transition: { duration: 1, delay: 1.2, ease: "easeInOut" } }
+        visible: { 
+          pathLength: 1, 
+          opacity: 1, 
+          transition: { 
+            duration: 1, 
+            delay: 1.2, 
+            ease: "easeInOut",
+            repeat: loop ? Infinity : 0,
+            repeatDelay: loop ? 4.2 : 0 
+          } 
+        }
       }}
       filter={`url(#glow-${idPrefix})`}
     />
@@ -66,7 +96,17 @@ export const DrawLogo = ({
       d="M 70 30 L 80 40 L 86 34"
       variants={{
         hidden: { pathLength: 0, opacity: 0 },
-        visible: { pathLength: 1, opacity: 1, transition: { duration: 0.8, delay: 1.8, ease: "easeInOut" } }
+        visible: { 
+          pathLength: 1, 
+          opacity: 1, 
+          transition: { 
+            duration: 0.8, 
+            delay: 1.8, 
+            ease: "easeInOut",
+            repeat: loop ? Infinity : 0,
+            repeatDelay: loop ? 4.6 : 0 
+          } 
+        }
       }}
       filter={`url(#glow-${idPrefix})`}
     />
@@ -76,18 +116,28 @@ export const DrawLogo = ({
       d="M 56 44 L 64 52 L 70 46"
       variants={{
         hidden: { pathLength: 0, opacity: 0 },
-        visible: { pathLength: 1, opacity: 1, transition: { duration: 0.6, delay: 2.2, ease: "easeInOut" } }
+        visible: { 
+          pathLength: 1, 
+          opacity: 1, 
+          transition: { 
+            duration: 0.6, 
+            delay: 2.2, 
+            ease: "easeInOut",
+            repeat: loop ? Infinity : 0,
+            repeatDelay: loop ? 4.8 : 0 
+          } 
+        }
       }}
       filter={`url(#glow-${idPrefix})`}
     />
     
     {/* Dynamic Data Nodes (Dots) */}
     <motion.circle cx="86" cy="34" r="3" fill={primaryColor} stroke="none" 
-      initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2.6, type: "spring" }} filter={`url(#glow-${idPrefix})`} />
+      initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2.6, type: "spring", repeat: loop ? Infinity : 0, repeatDelay: loop ? 5.4 : 0 }} filter={`url(#glow-${idPrefix})`} />
     <motion.circle cx="70" cy="46" r="3" fill={primaryColor} stroke="none" 
-      initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2.8, type: "spring" }} filter={`url(#glow-${idPrefix})`} />
+      initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2.8, type: "spring", repeat: loop ? Infinity : 0, repeatDelay: loop ? 5.2 : 0 }} filter={`url(#glow-${idPrefix})`} />
     <motion.circle cx="80" cy="20" r="3" fill={primaryColor} stroke="none" 
-      initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2.2, type: "spring" }} filter={`url(#glow-${idPrefix})`} />
+      initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2.2, type: "spring", repeat: loop ? Infinity : 0, repeatDelay: loop ? 5.8 : 0 }} filter={`url(#glow-${idPrefix})`} />
   </motion.svg>
 );
 

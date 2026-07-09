@@ -27,3 +27,10 @@
   Order deny,allow
   Deny from all
 </FilesMatch>
+
+# MIME types
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg .svgz
+  AddType image/x-icon .ico
+  AddType image/png .png
+</IfModule>

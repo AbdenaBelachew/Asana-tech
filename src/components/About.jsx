@@ -34,7 +34,7 @@ export default function About() {
             return (
               <ScrollReveal key={s.label} delay={i * 0.07}>
                 <div className="stat-tile hover:-translate-y-1 !p-4 sm:!p-7">
-                  
+
                   <div className="text-xl sm:text-3xl font-extrabold text-slate-900 font-display">{s.value}</div>
                   <div className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider leading-tight">{s.label}</div>
                 </div>
@@ -51,7 +51,7 @@ export default function About() {
               The furtuu Story
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
-              The name <span className="font-bold text-[#166804]">"furtuuu"</span> comes from the Afaan Oromo language, meaning <span className="font-semibold">"Solution," "Opportunity,"</span> or <span className="font-semibold">"Prosperity."</span> Our brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
+              The name <span className="font-bold text-[#166804]">"furtuu"</span> comes from the Afaan Oromo language, meaning <span className="font-semibold">"Solution," "Opportunity,"</span> or <span className="font-semibold">"Prosperity."</span> Our brand represents technology that creates opportunities, solves complex challenges, and accelerates digital transformation.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
               Founded in Addis Ababa, <span className="font-bold text-[#166804]">furtuu Systems</span> is dedicated to building secure, scalable, and intelligent digital solutions for businesses, governments, and organizations across Africa and the world.
@@ -67,7 +67,7 @@ export default function About() {
               return (
                 <ScrollReveal key={v.title} delay={i * 0.08}>
                   <div className="glass-card mobile-grid-card p-4 sm:p-6 hover:-translate-y-0.5 group h-full flex flex-col">
-                   
+
                     <h4 className="text-sm sm:text-base font-extrabold text-slate-900 mb-1.5 sm:mb-2 group-hover:text-[#166804] transition-colors duration-300">
                       {v.title}
                     </h4>
